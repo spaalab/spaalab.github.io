@@ -8,10 +8,15 @@
 
   <meta
     name="description"
-    content="SPAA Lab at IIT Dharwad — Research in VLSI AI Accelerators, LLMs, Transformers, and AI Optimization."
+    content="SPAA Lab at IIT Dharwad — Research in VLSI AI Accelerators, Large Language Models, Transformers, Quantization and AI Optimization."
   >
 
   <style>
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
     * {
       margin: 0;
       padding: 0;
@@ -23,8 +28,15 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Helvetica, Arial, sans-serif;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
       color: #111827;
       background: #ffffff;
       line-height: 1.6;
@@ -35,23 +47,35 @@
       text-decoration: none;
     }
 
-    .container {
-      width: min(1120px, 92%);
-      margin: auto;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    /* NAVBAR */
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
     nav {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
+
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+
       border-bottom: 1px solid #e5e7eb;
     }
 
     .nav-inner {
-      height: 72px;
+      min-height: 72px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -69,45 +93,96 @@
 
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 28px;
+
       list-style: none;
+
       font-size: 15px;
       font-weight: 500;
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
       color: #2563eb;
     }
 
-    /* HERO */
+
+    /* =========================================================
+       HERO
+       IIT DHARWAD BACKGROUND IMAGE
+    ========================================================= */
+
     .hero {
-      padding: 110px 0 100px;
-      background:
-        radial-gradient(circle at 85% 20%, #dbeafe 0, transparent 28%),
-        radial-gradient(circle at 10% 80%, #eff6ff 0, transparent 30%),
-        #ffffff;
+      position: relative;
+
+      min-height: 680px;
+
+      display: flex;
+      align-items: center;
+
+      padding: 100px 0;
+
+      /*
+        IMPORTANT:
+        hero-bg.png must be in the same folder
+        as index.html.
+      */
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.97) 0%,
+          rgba(255, 255, 255, 0.90) 28%,
+          rgba(255, 255, 255, 0.55) 52%,
+          rgba(255, 255, 255, 0.15) 78%,
+          rgba(255, 255, 255, 0.05) 100%
+        ),
+        url("hero-bg.png");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .hero-content {
-      max-width: 850px;
+      position: relative;
+      z-index: 2;
+
+      max-width: 780px;
     }
 
     .tag {
       display: inline-block;
+
       padding: 7px 14px;
-      border-radius: 999px;
-      background: #eff6ff;
-      color: #2563eb;
-      font-size: 14px;
-      font-weight: 600;
+
       margin-bottom: 24px;
+
+      border-radius: 999px;
+
+      background: rgba(239, 246, 255, 0.95);
+      color: #2563eb;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      border: 1px solid rgba(191, 219, 254, 0.8);
     }
 
     .hero h1 {
-      font-size: clamp(48px, 8vw, 86px);
+      font-size: clamp(50px, 8vw, 88px);
+
       line-height: 0.98;
+
       letter-spacing: -4px;
+
       margin-bottom: 28px;
+
+      color: #111827;
     }
 
     .hero h1 span {
@@ -116,9 +191,13 @@
 
     .hero p {
       max-width: 720px;
-      color: #4b5563;
+
+      color: #374151;
+
       font-size: 20px;
+
       line-height: 1.7;
+
       margin-bottom: 34px;
     }
 
@@ -130,15 +209,23 @@
 
     .btn {
       display: inline-block;
+
       padding: 13px 22px;
+
       border-radius: 8px;
-      font-weight: 600;
-      transition: 0.2s;
+
+      font-weight: 700;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .btn-primary {
       background: #111827;
-      color: white;
+      color: #ffffff;
     }
 
     .btn-primary:hover {
@@ -147,72 +234,110 @@
     }
 
     .btn-secondary {
+      background: rgba(255, 255, 255, 0.9);
+
       border: 1px solid #d1d5db;
-      background: white;
+
+      color: #111827;
     }
 
     .btn-secondary:hover {
       border-color: #2563eb;
       color: #2563eb;
+
+      transform: translateY(-2px);
     }
 
-    /* SECTIONS */
+
+    /* =========================================================
+       GENERAL SECTIONS
+    ========================================================= */
+
     section {
       padding: 90px 0;
     }
 
     .section-label {
       color: #2563eb;
+
       font-size: 13px;
       font-weight: 800;
+
       letter-spacing: 1.5px;
+
       text-transform: uppercase;
+
       margin-bottom: 10px;
     }
 
     .section-title {
       font-size: 42px;
+
       letter-spacing: -1.5px;
+
       margin-bottom: 18px;
     }
 
     .section-description {
       max-width: 700px;
+
       color: #6b7280;
+
       font-size: 17px;
+
       margin-bottom: 45px;
     }
 
-    /* RESEARCH */
+
+    /* =========================================================
+       RESEARCH
+    ========================================================= */
+
     .research-grid {
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
+
       gap: 22px;
     }
 
     .research-card {
       padding: 30px;
+
       border: 1px solid #e5e7eb;
+
       border-radius: 14px;
+
       background: #ffffff;
-      transition: 0.25s;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
     }
 
     .research-card:hover {
       transform: translateY(-5px);
+
       border-color: #bfdbfe;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+
+      box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.06);
     }
 
     .research-number {
       color: #2563eb;
+
       font-weight: 800;
+
       font-size: 14px;
+
       margin-bottom: 22px;
     }
 
     .research-card h3 {
       font-size: 23px;
+
       margin-bottom: 12px;
     }
 
@@ -220,33 +345,49 @@
       color: #6b7280;
     }
 
-    /* ABOUT */
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
     .about {
       background: #f8fafc;
     }
 
     .about-grid {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       gap: 60px;
+
       align-items: center;
     }
 
     .about-text p {
       color: #4b5563;
+
       font-size: 17px;
+
       margin-bottom: 18px;
     }
 
     .highlight {
-      padding: 30px;
+      padding: 32px;
+
       background: #111827;
-      color: white;
+
+      color: #ffffff;
+
       border-radius: 16px;
+
+      box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.08);
     }
 
     .highlight h3 {
       font-size: 24px;
+
       margin-bottom: 16px;
     }
 
@@ -254,26 +395,77 @@
       color: #d1d5db;
     }
 
-    /* PEOPLE */
+
+    /* =========================================================
+       PEOPLE
+    ========================================================= */
+
+    .people-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 22px;
+    }
+
     .people-card {
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
       padding: 30px;
-      max-width: 500px;
+
+      border: 1px solid #e5e7eb;
+
+      border-radius: 14px;
+
+      background: #ffffff;
+    }
+
+    .people-avatar {
+      width: 62px;
+      height: 62px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 20px;
+
+      border-radius: 50%;
+
+      background: #eff6ff;
+
+      color: #2563eb;
+
+      font-size: 20px;
+      font-weight: 800;
     }
 
     .people-card h3 {
-      font-size: 24px;
-      margin-bottom: 8px;
+      font-size: 21px;
+
+      margin-bottom: 6px;
+    }
+
+    .people-role {
+      color: #2563eb;
+
+      font-size: 14px;
+
+      font-weight: 700;
+
+      margin-bottom: 10px;
     }
 
     .people-card p {
       color: #6b7280;
     }
 
-    /* PUBLICATIONS */
+
+    /* =========================================================
+       PUBLICATIONS
+    ========================================================= */
+
     .publication {
       padding: 25px 0;
+
       border-top: 1px solid #e5e7eb;
     }
 
@@ -283,13 +475,17 @@
 
     .publication-year {
       color: #2563eb;
+
       font-size: 14px;
+
       font-weight: 700;
+
       margin-bottom: 5px;
     }
 
     .publication h3 {
       font-size: 20px;
+
       margin-bottom: 5px;
     }
 
@@ -297,10 +493,66 @@
       color: #6b7280;
     }
 
-    /* CONTACT */
+
+    /* =========================================================
+       PROJECTS
+    ========================================================= */
+
+    .projects-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 22px;
+    }
+
+    .project-card {
+      padding: 30px;
+
+      border-radius: 14px;
+
+      border: 1px solid #e5e7eb;
+
+      background: #ffffff;
+    }
+
+    .project-card h3 {
+      font-size: 22px;
+
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: #6b7280;
+    }
+
+    .project-tag {
+      display: inline-block;
+
+      margin-top: 18px;
+
+      padding: 5px 10px;
+
+      border-radius: 999px;
+
+      background: #eff6ff;
+
+      color: #2563eb;
+
+      font-size: 12px;
+
+      font-weight: 700;
+    }
+
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
     .contact {
       background: #111827;
-      color: white;
+
+      color: #ffffff;
     }
 
     .contact .section-label {
@@ -308,50 +560,88 @@
     }
 
     .contact .section-title {
-      color: white;
+      color: #ffffff;
     }
 
     .contact-text {
       color: #d1d5db;
+
       max-width: 650px;
+
       font-size: 17px;
+
       margin-bottom: 30px;
     }
 
     .contact-info {
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 15px;
     }
 
     .contact-item {
       padding: 13px 18px;
+
       border: 1px solid #374151;
+
       border-radius: 8px;
+
       color: #e5e7eb;
+
+      background: rgba(255, 255, 255, 0.02);
     }
 
-    /* FOOTER */
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
     footer {
       background: #0b1120;
+
       color: #9ca3af;
+
       padding: 25px 0;
+
       font-size: 14px;
     }
 
     .footer-inner {
       display: flex;
+
       justify-content: space-between;
+
       gap: 20px;
+
       flex-wrap: wrap;
     }
 
-    /* MOBILE */
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 850px) {
+
+      .people-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+    }
+
+
     @media (max-width: 700px) {
+
       .nav-inner {
-        height: auto;
-        padding: 18px 0;
-        align-items: flex-start;
+        min-height: 64px;
       }
 
       .nav-links {
@@ -359,11 +649,27 @@
       }
 
       .hero {
+        min-height: 620px;
+
         padding: 75px 0;
+
+        background-image:
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.96) 0%,
+            rgba(255, 255, 255, 0.72) 65%,
+            rgba(255, 255, 255, 0.30) 100%
+          ),
+          url("hero-bg.png");
+
+        background-size: cover;
+
+        background-position: center;
       }
 
       .hero h1 {
         font-size: 52px;
+
         letter-spacing: -2.5px;
       }
 
@@ -380,37 +686,80 @@
       }
 
       .research-grid,
-      .about-grid {
+      .projects-grid {
         grid-template-columns: 1fr;
       }
 
       .about-grid {
-        gap: 30px;
+        grid-template-columns: 1fr;
       }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- NAVIGATION -->
+
+  <!-- =======================================================
+       NAVIGATION
+  ======================================================== -->
+
   <nav>
+
     <div class="container nav-inner">
-      <a href="#" class="logo">SPAA <span>LAB</span></a>
+
+      <a href="#" class="logo">
+        SPAA <span>LAB</span>
+      </a>
 
       <ul class="nav-links">
-        <li><a href="#research">Research</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#people">People</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#contact">Contact</a></li>
+
+        <li>
+          <a href="#research">Research</a>
+        </li>
+
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+        <li>
+          <a href="#people">People</a>
+        </li>
+
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+          <a href="#publications">Publications</a>
+        </li>
+
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+
       </ul>
+
     </div>
+
   </nav>
 
-  <!-- HERO -->
+
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
+
   <header class="hero">
+
     <div class="container">
+
       <div class="hero-content">
 
         <div class="tag">
@@ -418,7 +767,8 @@
         </div>
 
         <h1>
-          Building<br>
+          Building
+          <br>
           <span>Efficient AI.</span>
         </h1>
 
@@ -429,121 +779,208 @@
         </p>
 
         <div class="buttons">
-          <a href="#research" class="btn btn-primary">
+
+          <a
+            href="#research"
+            class="btn btn-primary"
+          >
             Explore Research
           </a>
 
-          <a href="#contact" class="btn btn-secondary">
+          <a
+            href="#contact"
+            class="btn btn-secondary"
+          >
             Contact Lab
           </a>
+
         </div>
 
       </div>
+
     </div>
+
   </header>
 
-  <!-- RESEARCH -->
+
+  <!-- =======================================================
+       RESEARCH
+  ======================================================== -->
+
   <section id="research">
+
     <div class="container">
 
-      <div class="section-label">Research</div>
+      <div class="section-label">
+        Research
+      </div>
 
       <h2 class="section-title">
         Research directions
       </h2>
 
       <p class="section-description">
-        Our research focuses on making modern AI systems more efficient,
-        scalable, and hardware-friendly.
+        Our research focuses on making modern AI systems more
+        efficient, scalable, and hardware-friendly.
       </p>
+
 
       <div class="research-grid">
 
-        <div class="research-card">
-          <div class="research-number">01</div>
-          <h3>VLSI & AI Accelerators</h3>
-          <p>
-            Designing efficient hardware architectures and accelerators
-            for machine learning and AI workloads.
-          </p>
-        </div>
 
         <div class="research-card">
-          <div class="research-number">02</div>
-          <h3>LLMs & Transformers</h3>
+
+          <div class="research-number">
+            01
+          </div>
+
+          <h3>
+            VLSI & AI Accelerators
+          </h3>
+
           <p>
-            Exploring efficient inference and optimization techniques
-            for modern large language and transformer models.
+            Designing efficient hardware architectures and
+            accelerators for machine learning and AI workloads.
           </p>
+
         </div>
 
-        <div class="research-card">
-          <div class="research-number">03</div>
-          <h3>Quantization</h3>
-          <p>
-            Developing efficient quantization methods to reduce model
-            memory, computation, and deployment cost.
-          </p>
-        </div>
 
         <div class="research-card">
-          <div class="research-number">04</div>
-          <h3>AI Optimization</h3>
+
+          <div class="research-number">
+            02
+          </div>
+
+          <h3>
+            LLMs & Transformers
+          </h3>
+
           <p>
-            Algorithmic and system-level optimization for efficient
-            AI inference across hardware platforms.
+            Exploring efficient inference and optimization
+            techniques for modern large language and
+            transformer models.
           </p>
+
         </div>
+
+
+        <div class="research-card">
+
+          <div class="research-number">
+            03
+          </div>
+
+          <h3>
+            Quantization
+          </h3>
+
+          <p>
+            Developing efficient quantization methods to
+            reduce model memory, computation, and deployment cost.
+          </p>
+
+        </div>
+
+
+        <div class="research-card">
+
+          <div class="research-number">
+            04
+          </div>
+
+          <h3>
+            AI Optimization
+          </h3>
+
+          <p>
+            Algorithmic and system-level optimization for
+            efficient AI inference across hardware platforms.
+          </p>
+
+        </div>
+
 
       </div>
+
     </div>
+
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="about">
+
+  <!-- =======================================================
+       ABOUT
+  ======================================================== -->
+
+  <section
+    id="about"
+    class="about"
+  >
+
     <div class="container">
 
       <div class="about-grid">
 
+
         <div class="about-text">
-          <div class="section-label">About SPAA Lab</div>
+
+          <div class="section-label">
+            About SPAA Lab
+          </div>
 
           <h2 class="section-title">
             From algorithms to hardware.
           </h2>
 
           <p>
-            SPAA Lab is a research group at IIT Dharwad working at the
-            intersection of artificial intelligence, computer architecture,
-            and VLSI systems.
+            SPAA Lab is a research group at IIT Dharwad working
+            at the intersection of artificial intelligence,
+            computer architecture, and VLSI systems.
           </p>
 
           <p>
-            We investigate methods that enable powerful AI models to run
-            efficiently under real-world hardware and resource constraints.
+            We investigate methods that enable powerful AI models
+            to run efficiently under real-world hardware and
+            resource constraints.
           </p>
+
         </div>
+
 
         <div class="highlight">
-          <h3>Our focus</h3>
+
+          <h3>
+            Our focus
+          </h3>
 
           <p>
-            Efficient AI systems require both algorithmic innovation
-            and hardware-aware design. Our research connects these
-            two layers to build practical and scalable solutions.
+            Efficient AI systems require both algorithmic
+            innovation and hardware-aware design. Our research
+            connects these two layers to build practical and
+            scalable solutions.
           </p>
+
         </div>
+
 
       </div>
 
     </div>
+
   </section>
 
-  <!-- PEOPLE -->
+
+  <!-- =======================================================
+       PEOPLE
+  ======================================================== -->
+
   <section id="people">
+
     <div class="container">
 
-      <div class="section-label">People</div>
+      <div class="section-label">
+        People
+      </div>
 
       <h2 class="section-title">
         Our team
@@ -554,57 +991,289 @@
         and intelligent computing systems.
       </p>
 
-      <div class="people-card">
-        <h3>SPAA Lab</h3>
-        <p>
-          Faculty members, research scholars, students, and collaborators
-          working together on next-generation AI systems.
-        </p>
+
+      <div class="people-grid">
+
+
+        <div class="people-card">
+
+          <div class="people-avatar">
+            PI
+          </div>
+
+          <h3>
+            Faculty
+          </h3>
+
+          <div class="people-role">
+            Principal Investigator
+          </div>
+
+          <p>
+            Research in AI hardware, VLSI systems,
+            and efficient computing.
+          </p>
+
+        </div>
+
+
+        <div class="people-card">
+
+          <div class="people-avatar">
+            RS
+          </div>
+
+          <h3>
+            Research Scholars
+          </h3>
+
+          <div class="people-role">
+            Research Team
+          </div>
+
+          <p>
+            Working on AI accelerators, LLM optimization,
+            quantization, and hardware–software co-design.
+          </p>
+
+        </div>
+
+
+        <div class="people-card">
+
+          <div class="people-avatar">
+            ST
+          </div>
+
+          <h3>
+            Students
+          </h3>
+
+          <div class="people-role">
+            Student Researchers
+          </div>
+
+          <p>
+            Exploring emerging problems in artificial
+            intelligence and computing systems.
+          </p>
+
+        </div>
+
+
       </div>
 
     </div>
+
   </section>
 
-  <!-- PUBLICATIONS -->
-  <section id="publications" class="about">
+
+  <!-- =======================================================
+       PROJECTS
+  ======================================================== -->
+
+  <section
+    id="projects"
+    class="about"
+  >
+
     <div class="container">
 
-      <div class="section-label">Research Output</div>
+      <div class="section-label">
+        Projects
+      </div>
+
+      <h2 class="section-title">
+        Current research
+      </h2>
+
+      <p class="section-description">
+        Selected research directions and systems being
+        explored at SPAA Lab.
+      </p>
+
+
+      <div class="projects-grid">
+
+
+        <div class="project-card">
+
+          <h3>
+            Efficient AI Accelerators
+          </h3>
+
+          <p>
+            Hardware architectures for accelerating modern
+            machine learning workloads with reduced computation
+            and memory requirements.
+          </p>
+
+          <span class="project-tag">
+            VLSI · FPGA · AI
+          </span>
+
+        </div>
+
+
+        <div class="project-card">
+
+          <h3>
+            LLM Optimization
+          </h3>
+
+          <p>
+            Techniques for efficient large language model
+            inference, transformer optimization, and
+            resource-aware deployment.
+          </p>
+
+          <span class="project-tag">
+            LLM · Transformer
+          </span>
+
+        </div>
+
+
+        <div class="project-card">
+
+          <h3>
+            Data-Free Quantization
+          </h3>
+
+          <p>
+            Analytical and hardware-friendly approaches to
+            reducing model precision while maintaining
+            useful model performance.
+          </p>
+
+          <span class="project-tag">
+            Quantization · PTQ
+          </span>
+
+        </div>
+
+
+        <div class="project-card">
+
+          <h3>
+            Hardware–Software Co-Design
+          </h3>
+
+          <p>
+            Joint optimization of algorithms, models, memory
+            systems, and hardware architectures for efficient
+            AI computing.
+          </p>
+
+          <span class="project-tag">
+            Co-Design · Optimization
+          </span>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       PUBLICATIONS
+  ======================================================== -->
+
+  <section id="publications">
+
+    <div class="container">
+
+      <div class="section-label">
+        Research Output
+      </div>
 
       <h2 class="section-title">
         Publications
       </h2>
 
       <p class="section-description">
-        Selected research publications and ongoing work from SPAA Lab.
+        Selected research publications and ongoing work
+        from SPAA Lab.
       </p>
 
+
       <div class="publication">
-        <div class="publication-year">Research</div>
-        <h3>Efficient AI and Hardware Acceleration</h3>
+
+        <div class="publication-year">
+          Research
+        </div>
+
+        <h3>
+          Efficient AI and Hardware Acceleration
+        </h3>
+
         <p>
           Research in AI accelerators, efficient inference,
           quantization, and hardware–software co-design.
         </p>
+
       </div>
 
+
       <div class="publication">
-        <div class="publication-year">Research</div>
-        <h3>Large Language Model Optimization</h3>
+
+        <div class="publication-year">
+          Research
+        </div>
+
+        <h3>
+          Large Language Model Optimization
+        </h3>
+
         <p>
           Research on efficient transformer inference,
           model compression, and optimization.
         </p>
+
       </div>
 
+
+      <div class="publication">
+
+        <div class="publication-year">
+          Research
+        </div>
+
+        <h3>
+          AI Quantization and Efficient Inference
+        </h3>
+
+        <p>
+          Research on low-precision AI models and
+          efficient deployment.
+        </p>
+
+      </div>
+
+
     </div>
+
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
+
+  <!-- =======================================================
+       CONTACT
+  ======================================================== -->
+
+  <section
+    id="contact"
+    class="contact"
+  >
+
     <div class="container">
 
-      <div class="section-label">Contact</div>
+      <div class="section-label">
+        Contact
+      </div>
 
       <h2 class="section-title">
         Get in touch.
@@ -615,6 +1284,7 @@
         or information about SPAA Lab, please get in touch
         with the laboratory.
       </p>
+
 
       <div class="contact-info">
 
@@ -629,11 +1299,18 @@
       </div>
 
     </div>
+
   </section>
 
-  <!-- FOOTER -->
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
   <footer>
+
     <div class="container footer-inner">
+
       <div>
         © 2026 SPAA Lab · IIT Dharwad
       </div>
@@ -641,8 +1318,11 @@
       <div>
         Efficient AI · VLSI · LLMs
       </div>
+
     </div>
+
   </footer>
+
 
 </body>
 </html>
