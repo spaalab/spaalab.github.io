@@ -1,3 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SPAA Lab | IIT Dharwad</title>
+
+  <meta
+    name="description"
+    content="SPAA Lab at IIT Dharwad — VLSI AI Accelerators, Edge Computing, Deep Learning, LLMs, Quantization and AI Optimization."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      color: #102044;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(14px);
+
+      border-bottom: 1px solid #e8edf5;
+    }
+
+    .nav-inner {
+      min-height: 78px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+
+      border: 2px solid #1468c9;
+      border-radius: 12px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #1468c9;
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    .logo-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #12234a;
+      line-height: 1.1;
+    }
+
+    .logo-subtitle {
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: #53627c;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+
+      list-style: none;
+
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .nav-links a {
+      color: #253758;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #1468c9;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 680px;
+
+      display: flex;
+      align-items: center;
+
+      position: relative;
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.97) 0%,
+          rgba(255,255,255,0.91) 27%,
+          rgba(255,255,255,0.57) 53%,
+          rgba(255,255,255,0.18) 80%,
+          rgba(255,255,255,0.04) 100%
+        ),
+        url("git spaa lab .png");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      padding: 80px 0;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+
+      font-weight: 800;
+      color: #596b8b;
+
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(55px, 8vw, 92px);
+      line-height: 0.95;
+
+      letter-spacing: -5px;
+
+      color: #0c1c3c;
+
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #1468c9;
+    }
+
+    .hero-institute {
+      font-size: 27px;
+      font-weight: 700;
+
+      color: #17284b;
+
+      margin-bottom: 17px;
+    }
+
+    .hero-description {
+      max-width: 650px;
+
+      font-size: 18px;
+
+      color: #52627d;
+
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 14px 24px;
+
+      border-radius: 999px;
+
+      font-weight: 750;
+
+      transition: 0.25s;
+    }
+
+    .btn-primary {
+      background: #1468c9;
+      color: #ffffff;
+
+      box-shadow: 0 10px 25px rgba(20,104,201,0.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #0d58ad;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.92);
+
+      color: #12234a;
+
+      border: 1px solid #d6deea;
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+
+      border-color: #1468c9;
+
+      color: #1468c9;
+    }
+
+
+    /* =========================================================
+       RESEARCH FOCUS BAR
+    ========================================================= */
+
+    .focus-bar {
+      width: min(1120px, 88%);
+
+      margin: -42px auto 0;
+
+      position: relative;
+      z-index: 5;
+
+      background: rgba(255,255,255,0.95);
+
+      backdrop-filter: blur(12px);
+
+      border: 1px solid #e4ebf4;
+
+      border-radius: 22px;
+
+      box-shadow: 0 18px 50px rgba(28,55,90,0.10);
+
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      padding: 24px;
+    }
+
+    .focus-item {
+      display: flex;
+      align-items: center;
+
+      gap: 14px;
+
+      padding: 5px 20px;
+
+      border-right: 1px solid #dce4ee;
+    }
+
+    .focus-item:last-child {
+      border-right: none;
+    }
+
+    .focus-icon {
+      width: 47px;
+      height: 47px;
+
+      border-radius: 14px;
+
+      background: #edf6ff;
+
+      color: #1468c9;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 21px;
+
+      flex-shrink: 0;
+    }
+
+    .focus-item h3 {
+      font-size: 14px;
+      color: #142653;
+    }
+
+    .focus-item p {
+      font-size: 11px;
+      color: #71809a;
+    }
+
 
     /* =========================================================
        GENERAL SECTIONS
@@ -87,8 +417,7 @@
   }
 
   .research-number {
-    color: #1468c9;
-    font-weight: 800;
+    color: #1468c9;    font-weight: 800;
     font-size: 14px;
     margin-bottom: 20px;
   }
@@ -373,3 +702,1655 @@
 
       border-top: 1px solid #e5ebf3;
     }
+
+    .faculty-contact a,
+    .faculty-contact span {
+      padding: 9px 13px;
+
+      border-radius: 8px;
+
+      background: #f6f8fb;
+
+      color: #34445f;
+
+      font-size: 12px;
+
+      font-weight: 600;
+    }
+
+    .faculty-contact a:hover {
+      color: #1468c9;
+    }
+
+    .social-links {
+      display: flex;
+
+      gap: 10px;
+
+      margin-top: 18px;
+    }
+
+    .social-links a {
+      padding: 8px 13px;
+
+      border-radius: 8px;
+
+      background: #102044;
+
+      color: #ffffff;
+
+      font-size: 12px;
+
+      font-weight: 700;
+    }
+
+    .social-links a:hover {
+      background: #1468c9;
+    }
+
+
+    /* =========================================================
+       PUBLICATIONS
+    ========================================================= */
+
+    .publication-section {
+      max-width: 1050px;
+
+      margin: 0 auto;
+    }
+
+    .publication-heading {
+      display: flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+      margin-top: 50px;
+
+      margin-bottom: 10px;
+    }
+
+    .publication-heading h3 {
+      font-size: 28px;
+
+      color: #102044;
+    }
+
+    .publication-count {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-width: 32px;
+
+      height: 32px;
+
+      padding: 0 10px;
+
+      border-radius: 999px;
+
+      background: #edf6ff;
+
+      color: #1468c9;
+
+      font-size: 13px;
+
+      font-weight: 800;
+    }
+
+    .publication {
+      padding: 23px 0;
+
+      border-top: 1px solid #e4ebf4;
+    }
+
+    .publication:last-child {
+      border-bottom: 1px solid #e4ebf4;
+    }
+
+    .publication-number {
+      color: #1468c9;
+
+      font-size: 12px;
+
+      font-weight: 800;
+
+      margin-bottom: 4px;
+    }
+
+    .publication h4 {
+      font-size: 18px;
+
+      line-height: 1.45;
+
+      color: #132550;
+
+      margin-bottom: 6px;
+    }
+
+    .publication-authors {
+      color: #4e5e78;
+
+      font-size: 14px;
+
+      margin-bottom: 4px;    }
+
+    .publication-venue {
+      color: #6a7890;
+
+      font-size: 13px;
+
+      margin-bottom: 8px;
+    }
+
+    .publication-meta {
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      flex-wrap: wrap;
+    }
+
+    .publication-tag {
+      display: inline-block;
+
+      padding: 4px 9px;
+
+      border-radius: 6px;
+
+      background: #f1f5f9;
+
+      color: #53627a;
+
+      font-size: 11px;
+
+      font-weight: 700;
+    }
+
+    .doi-link {
+      display: inline-block;
+
+      padding: 5px 11px;
+
+      border-radius: 7px;
+
+      background: #1468c9;
+
+      color: #ffffff;
+
+      font-size: 11px;
+
+      font-weight: 750;
+    }
+
+    .doi-link:hover {
+      background: #0d58ad;
+    }
+
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
+    .contact {
+      background: #102044;
+
+      color: white;
+    }
+
+    .contact .section-label {
+      color: #9fb8db;
+    }
+
+    .contact .section-title {
+      color: white;
+    }
+
+    .contact-text {
+      max-width: 680px;
+
+      margin: 0 auto 30px;
+
+      text-align: center;
+
+      color: #d2dbea;
+
+      font-size: 17px;
+    }
+
+    .contact-info {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+    .contact-item {
+      padding: 13px 20px;
+
+      border: 1px solid #34486e;
+
+      border-radius: 999px;
+
+      color: #e1e7f2;
+    }
+
+    .contact-item a {
+      color: #ffffff;
+    }
+
+    .contact-item a:hover {
+      color: #8fc4ff;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      background: #09152e;
+
+      color: #9eabc1;
+
+      padding: 25px 0;
+
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      flex-wrap: wrap;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 1000px) {
+
+      .nav-links {
+        gap: 15px;
+        font-size: 12px;
+      }
+
+      .focus-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .focus-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .research-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .faculty-profile {
+        grid-template-columns: 240px 1fr;
+        gap: 35px;
+      }
+    }
+
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 680px;
+
+        background-image:
+          linear-gradient(
+            90deg,
+            rgba(255,255,255,0.95) 0%,
+            rgba(255,255,255,0.78) 45%,
+            rgba(255,255,255,0.28) 100%
+          ),
+          url("git spaa lab .png");
+
+        background-size: cover;
+
+        background-position: center;
+
+        background-repeat: no-repeat;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .faculty-profile {
+        grid-template-columns: 1fr;
+
+        padding: 28px;
+      }
+
+      .faculty-photo {
+        min-height: 300px;
+      }
+
+      .faculty-info h3 {
+        font-size: 29px;
+      }
+
+      .section-title {
+        font-size: 35px;
+      }
+    }
+
+
+    @media (max-width: 600px) {
+
+      .logo-mark {
+        width: 42px;
+        height: 42px;
+      }
+
+      .logo-title {
+        font-size: 19px;
+      }
+
+      .focus-bar {
+        grid-template-columns: 1fr;
+
+        margin-top: -30px;
+      }
+
+      .focus-item {
+        border-right: none;
+
+        border-bottom: 1px solid #dce4ee;
+
+        padding: 15px 10px;
+      }
+
+      .focus-item:last-child {
+        border-bottom: none;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .hero h1 {
+        font-size: 55px;
+
+        letter-spacing: -3px;
+      }
+
+      .hero-institute {
+        font-size: 21px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .faculty-contact {
+        flex-direction: column;
+      }
+
+      .faculty-contact a,
+      .faculty-contact span {
+        width: 100%;
+      }
+
+      .publication-heading h3 {
+        font-size: 24px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================================================
+       NAVIGATION
+  ========================================================= -->
+
+  <nav>
+
+    <div class="container nav-inner">
+
+      <a href="#home" class="logo">
+
+        <div class="logo-mark">
+          AI
+        </div>
+
+        <div>
+          <div class="logo-title">
+            SPAA Lab
+          </div>
+
+          <div class="logo-subtitle">
+            IIT DHARWAD
+          </div>
+        </div>
+
+      </a>
+
+
+      <ul class="nav-links">
+
+        <li>
+          <a href="#home">Home</a>
+        </li>
+
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+        <li>
+          <a href="#research">Research</a>
+        </li>
+
+        <li>
+          <a href="#faculty">Faculty</a>
+        </li>
+
+        <li>
+          <a href="#publications">Publications</a>
+        </li>
+
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </nav>
+
+
+  <!-- =========================================================
+       HERO
+  ========================================================= -->
+
+  <header class="hero" id="home">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          SYSTEMS · PROCESSORS · ALGORITHMS · ACCELERATORS
+        </div>
+
+        <h1>
+          SPAA <span>Lab</span>
+        </h1>
+
+        <div class="hero-institute">
+          Indian Institute of Technology Dharwad
+        </div>
+
+        <p class="hero-description">
+          Researching efficient and intelligent computing systems
+          through VLSI, AI accelerators, edge computing,
+          deep learning, language models, quantization,
+          and optimization techniques.
+        </p>
+
+        <div class="buttons">
+
+          <a href="#research" class="btn btn-primary">
+            Our Research →
+          </a>
+
+          <a href="#faculty" class="btn btn-secondary">
+            Meet Our Faculty
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================================================
+       FOCUS BAR
+  ========================================================= -->
+
+  <div class="focus-bar">
+
+    <div class="focus-item">
+
+      <div class="focus-icon">
+        ▣
+      </div>
+
+      <div>
+        <h3>
+          VLSI & AI Accelerators
+        </h3>        <p>
+          Efficient AI Hardware
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="focus-item">
+
+      <div class="focus-icon">
+        ◉
+      </div>
+
+      <div>
+        <h3>
+          Edge Computing
+        </h3>
+
+        <p>
+          ML / AI Systems
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="focus-item">
+
+      <div class="focus-icon">
+        ▥
+      </div>
+
+      <div>
+        <h3>
+          Deep Learning
+        </h3>
+
+        <p>
+          High Performance AI
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="focus-item">
+
+      <div class="focus-icon">
+        ♙
+      </div>
+
+      <div>
+        <h3>
+          Inference Optimization
+        </h3>
+
+        <p>
+          Efficient AI Models
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
+       ABOUT
+  ========================================================= -->
+
+  <section id="about" class="about">
+
+    <div class="container">
+
+      <div class="about-grid">
+
+        <div class="about-text">
+
+          <div class="section-label">
+            About SPAA Lab
+          </div>
+
+          <h2 class="section-title">
+            Efficient intelligence,
+            from algorithms to hardware.
+          </h2>
+
+          <p>
+            SPAA Lab at the Indian Institute of Technology Dharwad
+            works at the intersection of artificial intelligence,
+            computer architecture, VLSI systems, signal processing,
+            and efficient computing.
+          </p>
+
+          <p>
+            The lab focuses on developing efficient hardware
+            accelerators, edge computing solutions, deep learning
+            systems, inference optimization techniques, and
+            intelligent computing architectures.
+          </p>
+
+        </div>
+
+
+        <div class="highlight">
+
+          <h3>
+            SPAA Lab
+          </h3>
+
+          <p>
+            The laboratory brings together algorithmic innovation
+            and hardware design to address the growing computational
+            demands of modern AI systems.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       RESEARCH
+  ========================================================= -->
+
+  <section id="research">
+
+    <div class="container">
+
+      <div class="section-label">
+        Research Areas
+      </div>
+
+      <h2 class="section-title">
+        Our Research Focus
+      </h2>
+
+      <p class="section-description">
+        SPAA Lab explores efficient AI systems across hardware,
+        algorithms, signal processing, and machine learning.
+      </p>
+
+
+      <div class="research-grid">
+
+
+        <div class="research-card">
+
+          <div class="research-number">
+            01
+          </div>
+
+          <h3>
+            Edge Computing Accelerators
+          </h3>
+
+          <p>
+            Hardware acceleration approaches for
+            machine learning and AI applications at
+            the edge.
+          </p>
+
+        </div>
+
+
+        <div class="research-card">
+
+          <div class="research-number">
+            02
+          </div>
+
+          <h3>
+            High-Performance Deep Learning
+          </h3>
+
+          <p>
+            Efficient architectures and systems for
+            accelerating modern deep learning workloads.
+          </p>
+
+        </div>
+
+
+        <div class="research-card">
+
+          <div class="research-number">
+            03
+          </div>
+
+          <h3>
+            AI / ML Accelerators
+          </h3>
+
+          <p>
+            VLSI and hardware architectures designed
+            for efficient artificial intelligence computing.
+          </p>
+
+        </div>
+
+
+        <div class="research-card">
+
+          <div class="research-number">
+            04
+          </div>
+
+          <h3>
+            Inference Model Optimization
+          </h3>
+
+          <p>
+            Techniques for efficient inference and
+            optimization of machine learning models.
+          </p>
+
+        </div>
+
+
+        <div class="research-card">
+
+          <div class="research-number">
+            05
+          </div>
+
+          <h3>
+            Speech Processing
+          </h3>
+
+          <p>
+            Speech enhancement, noise reduction,
+            feature processing, and deep-learning-based
+            speech systems.
+          </p>
+
+        </div>
+
+
+        <div class="research-card">
+
+          <div class="research-number">
+            06
+          </div>
+
+          <h3>
+            Digital Signal Processing
+          </h3>
+
+          <p>
+            Algorithms and hardware architectures
+            for efficient digital signal processing.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       FACULTY
+  ========================================================= -->
+<style>
+  .faculty-profile {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 55px;
+    padding: 42px;
+    background: #ffffff;
+    border: 1px solid #e2e9f2;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(24, 58, 100, 0.08);
+  }
+
+  .faculty-photo {
+    min-height: 370px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #eaf4ff, #dcecff);
+    overflow: hidden;
+  }
+
+  .faculty-photo img {
+    width: 100%;
+    height: 100%;
+    min-height: 370px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  .faculty-role {
+    color: #1468c9;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+
+  .faculty-info h3 {
+    font-size: 35px;
+    line-height: 1.15;
+    color: #102044;
+    margin-bottom: 8px;
+  }
+
+  .faculty-position {
+    color: #1468c9;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .faculty-department {
+    color: #65748d;
+    font-size: 15px;
+    margin-top: 3px;
+    margin-bottom: 24px;
+  }
+
+  .faculty-bio {
+    color: #596982;
+    font-size: 15.5px;
+    line-height: 1.75;
+    margin-bottom: 15px;
+  }
+
+  .faculty-info h4 {
+    color: #102044;
+    font-size: 19px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+
+  .research-interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+
+  .research-interests span {
+    padding: 8px 13px;
+    border-radius: 999px;
+    background: #edf6ff;
+    color: #1468c9;
+    border: 1px solid #d7e9fb;
+    font-size: 12px;
+    font-weight: 650;
+  }
+
+  .faculty-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 27px;
+    padding-top: 22px;
+    border-top: 1px solid #e5ebf3;
+  }
+
+  .faculty-contact a,
+  .faculty-contact span {
+    padding: 9px 13px;
+    border-radius: 8px;
+    background: #f6f8fb;
+    color: #34445f;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .faculty-contact a:hover {
+    color: #1468c9;
+  }
+
+  @media (max-width: 800px) {
+    .faculty-profile {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 24px;
+    }
+  }
+</style>
+
+<div class="faculty-profile">
+
+  <div class="faculty-photo">
+    <img src="Professional%20Indian%20Corporate%20Headshot.png" alt="Prof. Samba Raju Chiluveru">
+  </div>
+
+  <div class="faculty-info">
+    <div class="faculty-role">PRINCIPAL INVESTIGATOR</div>
+    <h3>Prof. Samba Raju Chiluveru</h3>
+    <div class="faculty-position">Assistant Professor</div>
+    <div class="faculty-department">Department of Electrical, Electronics and Communication Engineering, IIT Dharwad</div>
+
+    <p class="faculty-bio">
+      Yahan sir ka short bio likho.
+    </p>
+
+    <h4>Research Interests</h4>
+    <div class="research-interests">
+      <span> AI Accelerators</span>
+      <span>Edge Computing</span>
+      <span>Deep Learning</span>
+      <span>LLMs</span>
+      <span>Quantization</span>
+      <span>AI Optimization</span>
+    </div>
+
+    <div class="faculty-contact">      <a href="mailto:sambaee@iitdh.ac.in">sambaee@iitdh.ac.in</a>
+      <a href="tel:+918362309733">+91 836 230 9733</a>
+      <span>A1–340, Academic Block-I</span>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+  <!-- =========================================================
+       PUBLICATIONS
+  ========================================================= -->
+
+  <section id="publications">
+
+    <div class="container">
+
+      <div class="section-label">
+        Research Output
+      </div>
+
+      <h2 class="section-title">
+        Publications
+      </h2>
+
+      <p class="section-description">
+        Selected journal and conference publications
+        of Prof. Samba Raju Chiluveru.
+      </p>
+
+
+      <div class="publication-section">
+
+
+        <!-- =====================================================
+             JOURNALS
+        ===================================================== -->
+
+        <div class="publication-heading">
+
+          <h3>
+            Journals
+          </h3>
+
+          <span class="publication-count">
+            9
+          </span>
+
+        </div>
+
+
+        <!-- JOURNAL 1 -->
+
+        <article class="publication">
+
+          <div class="publication-number">
+            JOURNAL · 01
+          </div>
+
+          <h4>
+            Low SNR Speech Enhancement with DNN Based Phase Estimation
+          </h4>
+
+          <div class="publication-authors">
+            Samba Raju Chiluveru, Manoj Tripathy
+          </div>
+
+          <div class="publication-venue">
+            International Journal of Speech Technology (Springer),
+            Vol. 22, No. 1, pp. 283–292, 2019.
+          </div>
+
+          <div class="publication-meta">
+
+            <span class="publication-tag">
+              Scopus · Q2
+            </span>
+
+            <span class="publication-tag">
+              IF 0.657
+            </span>
+
+            <a
+              class="doi-link"
+              href="https://doi.org/10.1007/s10772-019-09603-y"
+              target="_blank"
+              rel="noopener"
+            >
+              DOI →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- JOURNAL 2 -->
+
+        <article class="publication">
+
+          <div class="publication-number">
+            JOURNAL · 02
+          </div>
+
+          <h4>
+            Non-Linear Activation Function Approximation Using a REMEZ Algorithm
+          </h4>
+
+          <div class="publication-authors">
+            Samba Raju Chiluveru, Manoj Tripathy, Bibhudutta Mohapatra
+          </div>
+
+          <div class="publication-venue">
+            IET Circuits, Devices and Systems, March 2021.
+          </div>
+
+          <div class="publication-meta">
+
+            <span class="publication-tag">
+              SCI · Q2
+            </span>
+
+            <span class="publication-tag">
+              IF 1.290
+            </span>
+
+            <a
+              class="doi-link"
+              href="https://doi.org/10.1049/cds2.12058"
+              target="_blank"
+              rel="noopener"
+            >
+              DOI →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- JOURNAL 3 -->
+
+        <article class="publication">
+
+          <div class="publication-number">
+            JOURNAL · 03
+          </div>
+
+          <h4>
+            Accuracy Controlled Iterative Method for Efficient Sigmoid Function Approximation
+          </h4>
+
+          <div class="publication-authors">
+            Samba Raju Chiluveru, Manoj Tripathy, Bibhudutta Mohapatra
+          </div>
+
+          <div class="publication-venue">
+            IET Electronics Letters, Vol. 56, No. 18, pp. 914–916, 2020.
+          </div>
+
+          <div class="publication-meta">
+
+            <span class="publication-tag">
+              SCI · Q2
+            </span>
+
+            <span class="publication-tag">
+              IF 1.816
+            </span>
+
+            <a
+              class="doi-link"
+              href="https://doi.org/10.1049/el.2020.0854"
+              target="_blank"
+              rel="noopener"
+            >
+              DOI →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- JOURNAL 4 -->
+
+        <article class="publication">
+
+          <div class="publication-number">
+            JOURNAL · 04
+          </div>
+
+          <h4>
+            Hardware Implementation of DNN-Based Speech Enhancement Algorithm with Precise Sigmoid Activation Function
+          </h4>
+
+          <div class="publication-authors">
+            Samba Raju Chiluveru, Gyanendra, Snehit Chunarkar,
+            Manoj Tripathy, Brajesh Kumar Kaushik
+          </div>
+
+          <div class="publication-venue">
+            IEEE Transactions on Circuits and Systems II:
+            Express Briefs, May 2021.
+          </div>
+
+          <div class="publication-meta">
+
+            <span class="publication-tag">
+              SCI · Q1
+            </span>
+
+            <span class="publication-tag">
+              IF 2.814
+            </span>
+
+            <a
+              class="doi-link"
+              href="https://doi.org/10.1109/TCSII.2021.3082941"
+              target="_blank"
+              rel="noopener"
+            >
+              DOI →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- JOURNAL 5 -->
+
+        <article class="publication">
+
+          <div class="publication-number">
+            JOURNAL · 05
+          </div>
+
+          <h4>
+            Memory Efficient Architecture for Lifting-Based Discrete Wavelet Packet Transform
+          </h4>
+
+          <div class="publication-authors">
+            Gyanendra, Samba Raju Chiluveru, B. Raman,
+            M. Tripathy, B. K. Kaushik
+          </div>
+
+          <div class="publication-venue">
+            IEEE Transactions on Circuits and Systems II:
+            Express Briefs, Vol. 68, No. 4, pp. 1373–1377, April 2021.
+          </div>
+
+          <div class="publication-meta">
+
+            <span class="publication-tag">
+              SCI · Q1
+            </span>
+
+            <span class="publication-tag">
+              IF 2.814
+            </span>
+
+            <a
+              class="doi-link"
+              href="https://doi.org/10.1109/TCSII.2020.3028092"
+              target="_blank"
+              rel="noopener"
+            >
+              DOI →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- JOURNAL 6 -->
+
+        <article class="publication">
+
+          <div class="publication-number">
+            JOURNAL · 06
+          </div>
+
+          <h4>
+            Novel Architecture for Lifting Discrete Wavelet Packet Transform with Arbitrary Tree Structure
+          </h4>
+
+          <div class="publication-authors">
+            Gyanendra, Samba Raju Chiluveru, B. Raman,
+            M. Tripathy, B. K. Kaushik
+          </div>
+
+          <div class="publication-venue">
+            IEEE Transactions on Very Large Scale Integration
+            (VLSI) Systems, April 2021.
+          </div>
+
+          <div class="publication-meta">
+
+            <span class="publication-tag">
+              SCI · Q2
+            </span>
+
+            <span class="publication-tag">
+              IF 2.037
+            </span>
+
+            <a
+              class="doi-link"
+              href="https://doi.org/10.1109/TVLSI.2021.3079989"
+              target="_blank"
+              rel="noopener"
+            >
+              DOI →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- JOURNAL 7 -->
+
+        <article class="publication">
+
+          <div class="publication-number">
+            JOURNAL · 07
+          </div>
+
+          <h4>
+            A Controlled Accuracy Based Recursive Algorithm for Approximation of Sigmoid Activation
+          </h4>
+
+          <div class="publication-authors">
+            Samba Raju Chiluveru, Manoj Tripathy, Snehit Chunarkar
+          </div>
+
+          <div class="publication-venue">
+            National Academy Science Letters (Springer),
+            January 2021.
+          </div>
+
+          <div class="publication-meta">
+
+            <span class="publication-tag">
+              SCIE · Q2
+            </span>
+
+            <span class="publication-tag">
+              IF 0.416
+            </span>
+
+            <a
+              class="doi-link"
+              href="https://doi.org/10.1007/s40009-020-01037-4"
+              target="_blank"
+              rel="noopener"
+            >
+              DOI →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- JOURNAL 8 -->
+
+        <article class="publication">
+
+          <div class="publication-number">
+            JOURNAL · 08
+          </div>
+
+          <h4>
+            Speech Enhancement using a Variable Level Decomposition DWT
+          </h4>
+
+          <div class="publication-authors">
+            Samba Raju Chiluveru, Manoj Tripathy
+          </div>
+
+          <div class="publication-venue">
+            National Academy Science Letters (Springer),
+            Vol. 44, pp. 239–242, 2021.
+          </div>
+
+          <div class="publication-meta">
+
+            <span class="publication-tag">
+              SCIE · Q2
+            </span>
+
+            <span class="publication-tag">
+              IF 0.416
+            </span>
+
+            <a
+              class="doi-link"
+              href="https://doi.org/10.1007/s40009-020-00983-3"
+              target="_blank"
+              rel="noopener"
+            >
+              DOI →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- JOURNAL 9 -->
+
+        <article class="publication">
+
+          <div class="publication-number">            JOURNAL · 09
+          </div>
+
+          <h4>
+            A Real-World Noise Removal with Wavelet Speech Feature
+          </h4>
+
+          <div class="publication-authors">
+            Samba Raju Chiluveru, Manoj Tripathy
+          </div>
+
+          <div class="publication-venue">
+            International Journal of Speech Technology (Springer),
+            Vol. 23, pp. 683–693, 2020.
+          </div>
+
+          <div class="publication-meta">
+
+            <span class="publication-tag">
+              Scopus · Q2
+            </span>
+
+            <span class="publication-tag">
+              IF 0.657
+            </span>
+
+            <a
+              class="doi-link"
+              href="https://doi.org/10.1007/s10772-020-09748-1"
+              target="_blank"
+              rel="noopener"
+            >
+              DOI →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- =====================================================
+             CONFERENCES
+        ===================================================== -->
+
+        <div class="publication-heading">
+
+          <h3>
+            Conferences
+          </h3>
+
+          <span class="publication-count">
+            4
+          </span>
+
+        </div>
+
+
+        <!-- CONFERENCE 1 -->
+
+        <article class="publication">
+
+          <div class="publication-number">
+            CONFERENCE · 01
+          </div>
+
+          <h4>
+            Nonstationary Noise Reduction in Low SNR Speech Signals with Wavelet Coefficient Feature
+          </h4>
+
+          <div class="publication-authors">
+            Samba Raju Chiluveru, Manoj Tripathy
+          </div>
+
+          <div class="publication-venue">
+            Proceedings of Third International Conference on
+            Smart Systems and Inventive Technology (ICSSIT),
+            Tirunaveli, India, November 2020, pp. 647–653.
+          </div>
+
+        </article>
+
+
+        <!-- CONFERENCE 2 -->
+
+        <article class="publication">
+
+          <div class="publication-number">
+            CONFERENCE · 02
+          </div>
+
+          <h4>
+            Comparison of Recurrent Architectures for Speech Enhancement
+          </h4>
+
+          <div class="publication-authors">
+            Samba Raju Chiluveru, Anil Surisetty, Manoj Tripathy
+          </div>
+
+          <div class="publication-venue">
+            Proceedings of International Conference on Artificial
+            Intelligence and Applications (ICAIA),
+            Roorkee, India, November 2019, pp. 5–9.
+          </div>
+
+        </article>
+
+
+        <!-- CONFERENCE 3 -->
+
+        <article class="publication">
+
+          <div class="publication-number">
+            CONFERENCE · 03
+          </div>
+
+          <h4>
+            Speech Enhancement Using Hybrid Model with Cochleagram Speech Feature
+          </h4>
+
+          <div class="publication-authors">
+            Samba Raju Chiluveru, M. Tripathy
+          </div>
+
+          <div class="publication-venue">
+            2021 IEEE 2nd International Conference on Technology,
+            Engineering, Management for Societal impact using Marketing,
+            Entrepreneurship and Talent (TEMSMET),
+            Pune, India, 2021, pp. 1–6.
+          </div>
+
+          <div class="publication-meta">
+
+            <a
+              class="doi-link"
+              href="https://doi.org/10.1109/TEMSMET53515.2021.9768782"
+              target="_blank"
+              rel="noopener"
+            >
+              DOI →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- CONFERENCE 4 -->
+
+        <article class="publication">
+
+          <div class="publication-number">
+            CONFERENCE · 04
+          </div>
+
+          <h4>
+            Mixed Language Separation Using Deep Neural Network
+          </h4>
+
+          <div class="publication-authors">
+            S. Chunarkar, Samba Raju Chiluveru, M. Tripathy
+          </div>
+
+          <div class="publication-venue">
+            2021 5th International Conference on Electrical,
+            Electronics, Communication, Computer Technologies and
+            Optimization Techniques (ICEECCOT),
+            Mysuru, India, 2021, pp. 151–155.
+          </div>
+
+          <div class="publication-meta">
+
+            <a
+              class="doi-link"
+              href="https://doi.org/10.1109/ICEECCOT52851.2021.9707959"
+              target="_blank"
+              rel="noopener"
+            >
+              DOI →
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       CONTACT
+  ========================================================= -->
+<section id="contact" class="contact" aria-labelledby="contact-title">
+  <div class="container">
+
+    <div class="section-label">Contact</div>
+    <h2 id="contact-title" class="section-title">Get in touch.</h2>
+
+    <p class="contact-text">
+      For research collaboration, speaking requests, student opportunities,
+      and inquiries regarding SPAA Lab, please contact
+      <strong>Prof. Samba Raju Chiluveru</strong>.
+    </p>
+
+    <address class="contact-info">
+
+      <div class="contact-item">
+        <a href="mailto:sambaee@iitdh.ac.in">sambaee@iitdh.ac.in</a>
+      </div>
+
+      <div class="contact-item">
+        <a href="tel:+918362309733">+91 836 230 9733</a>
+      </div>
+
+      <div class="contact-item">A1–340, Academic Block-I</div>
+
+      <div class="contact-item">IIT Dharwad, Karnataka, India</div>
+
+    </address>
+
+  </div>
+</section>
+    <!-- =========================================================
+       FOOTER
+  ========================================================= -->
+
+    <!-- =========================================================
+       FOOTER
+  ========================================================= -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+        © 2026 SPAA Lab · IIT Dharwad
+      </div>
+
+      <div>
+        <a href="mailto:sambaee@iitdh.ac.in">sambaee@iitdh.ac.in</a>
+        ·
+        <a href="tel:+918362309733">+91 836 230 9733</a>
+      </div>
+
+      <div>
+        VLSI · AI Accelerators · Edge Computing · AI Optimization
+      </div>
+
+      <div>
+        <a href="#home">Back to top ↑</a>
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
+      
