@@ -394,56 +394,86 @@
     /* =========================================================
        RESEARCH
     ========================================================= */
+<style>
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+  }
 
-    .research-grid {
-      display: grid;
+  .research-card {
+    padding: 32px;
+    border-radius: 18px;
+    border: 1px solid #e4ebf4;
+    background: #ffffff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
 
-      grid-template-columns: repeat(3, 1fr);
+  .research-card:hover,
+  .research-card:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(24, 58, 100, 0.08);
+    border-color: #c7dcf5;
+  }
 
-      gap: 22px;
-    }
+  .research-number {
+    color: #1468c9;
+    font-weight: 800;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
 
+  .research-card h3 {
+    font-size: 21px;
+    line-height: 1.3;
+    color: #132550;
+    margin-bottom: 12px;
+  }
+
+  .research-card p {
+    color: #5b6a82;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 600px) {
     .research-card {
-      padding: 32px;
-
-      border-radius: 18px;
-
-      border: 1px solid #e4ebf4;
-
-      background: #ffffff;
-
-      transition: 0.25s;
+      padding: 24px;
     }
+  }
 
-    .research-card:hover {
-      transform: translateY(-6px);
-
-      box-shadow: 0 18px 40px rgba(24,58,100,0.08);
-
-      border-color: #c7dcf5;
+  @media (prefers-reduced-motion: reduce) {
+    .research-card {
+      transition: none;
     }
-
-    .research-number {
-      color: #1468c9;
-
-      font-weight: 800;
-
-      font-size: 14px;
-
-      margin-bottom: 20px;
+    .research-card:hover,
+    .research-card:focus-within {
+      transform: none;
     }
+  }
+</style>
 
-    .research-card h3 {
-      font-size: 21px;
+<div class="research-grid">
 
-      color: #132550;
+  <div class="research-card">
+    <div class="research-number">01</div>
+    <h3>VLSI AI Accelerators</h3>
+    <p>Hardware designs that run neural networks fast and with low power.</p>
+  </div>
 
-      margin-bottom: 12px;
-    }
+  <div class="research-card">
+    <div class="research-number">02</div>
+    <h3>Edge Computing</h3>
+    <p>Running AI on small devices, close to where the data is produced.</p>
+  </div>
 
-    .research-card p {
-      color: #687790;
-    }
+  <div class="research-card">
+    <div class="research-number">03</div>
+    <h3>Quantization and AI Optimization</h3>
+    <p>Making deep learning models and LLMs smaller and faster.</p>
+  </div>
+
+</div>
+   
 
 
     /* =========================================================
