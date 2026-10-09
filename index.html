@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,36 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>SPAA Lab | IIT Dharwad</title>
-  <meta name="description" content="Signal Processing and AI Accelerators Lab at IIT Dharwad. Research in VLSI, AI accelerators, deep learning, speech processing, and digital signal processing.">
+
+  <meta
+    name="description"
+    content="SPAA Lab at IIT Dharwad — VLSI AI Accelerators, Edge Computing, Deep Learning, LLMs, Quantization and AI Optimization."
+  >
 
   <style>
-    :root {
-      --primary: #123b67;
-      --primary-dark: #0a2540;
-      --accent: #d5a64b;
-      --background: #f6f8fb;
-      --text: #1e293b;
-      --muted: #64748b;
-      --border: #e2e8f0;
-      --white: #ffffff;
-    }
-
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 85px;
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.7;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      color: #102044;
+      background: #ffffff;
+      line-height: 1.6;
     }
 
     a {
@@ -44,870 +43,433 @@
     }
 
     .container {
-      width: min(1120px, 90%);
-      margin: 0 auto;
+      width: min(1200px, 92%);
+      margin: auto;
     }
 
-    /* NAVIGATION */
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
 
-    header {
+    nav {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(14px);
+
+      border-bottom: 1px solid #e8edf5;
     }
 
-    .nav {
-      min-height: 76px;
+    .nav-inner {
+      min-height: 78px;
+
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 24px;
+      justify-content: space-between;
     }
 
-    .brand {
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+
+      border: 2px solid #1468c9;
+      border-radius: 12px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #1468c9;
       font-size: 21px;
       font-weight: 800;
-      color: var(--primary);
-      white-space: nowrap;
     }
 
-    .brand span {
-      display: block;
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--muted);
-      letter-spacing: 1px;
+    .logo-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #12234a;
+      line-height: 1.1;
+    }
+
+    .logo-subtitle {
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: #53627c;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 21px;
-      flex-wrap: wrap;
+      gap: 27px;
+
+      list-style: none;
+
+      font-size: 14px;
+      font-weight: 650;
     }
 
     .nav-links a {
-      font-size: 13px;
-      font-weight: 600;
-      color: #334155;
+      color: #253758;
+      transition: 0.2s;
     }
 
     .nav-links a:hover {
-      color: var(--accent);
+      color: #1468c9;
     }
 
-    /* HERO */
+
+    /* =========================================================
+       HERO
+    ========================================================= */
 
     .hero {
-      min-height: 560px;
+      min-height: 680px;
+
       display: flex;
       align-items: center;
-      color: var(--white);
-      background:
+
+      position: relative;
+
+      background-image:
         linear-gradient(
           90deg,
-          rgba(5, 25, 47, 0.93),
-          rgba(10, 37, 64, 0.76)
+          rgba(255,255,255,0.97) 0%,
+          rgba(255,255,255,0.91) 27%,
+          rgba(255,255,255,0.57) 53%,
+          rgba(255,255,255,0.18) 80%,
+          rgba(255,255,255,0.04) 100%
         ),
-        url("iitdh.jpg") center/cover no-repeat;
+        url("git spaa lab .png");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .hero-content {
-      max-width: 800px;
-      padding: 100px 0;
+      max-width: 760px;
+      padding: 80px 0;
     }
 
     .eyebrow {
-      color: #f0cb7b;
       font-size: 12px;
-      font-weight: 700;
+      letter-spacing: 4px;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 18px;
-    }
 
-    .hero h1 {
-      font-size: clamp(38px, 6vw, 64px);
-      line-height: 1.13;
-      margin-bottom: 22px;
-      letter-spacing: -1.5px;
-    }
-
-    .hero p {
-      max-width: 680px;
-      color: #e2e8f0;
-      font-size: 17px;
-      margin-bottom: 30px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 12px 22px;
-      background: var(--accent);
-      color: #172033;
-      font-weight: 700;
-      border-radius: 5px;
-    }
-
-    .button:hover {
-      background: #edc66e;
-    }
-
-    .button-outline {
-      display: inline-block;
-      margin-left: 10px;
-      padding: 11px 22px;
-      border: 1px solid rgba(255,255,255,0.7);
-      border-radius: 5px;
-      color: white;
-    }
-
-    /* GENERAL SECTIONS */
-
-    .section {
-      padding: 85px 0;
-    }
-
-    .section-alt {
-      background: var(--background);
-    }
-
-    .section-label {
-      margin-bottom: 8px;
-      color: #a47723;
-      font-size: 12px;
       font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+      color: #596b8b;
 
-    .section-title {
-      color: var(--primary-dark);
-      font-size: clamp(28px, 4vw, 40px);
-      line-height: 1.25;
-      margin-bottom: 18px;
-    }
-
-    .section-intro {
-      max-width: 760px;
-      margin-bottom: 35px;
-      color: var(--muted);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 25px;
-      height: 100%;
-    }
-
-    .card h3 {
-      color: var(--primary);
-      font-size: 19px;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* RESEARCH */
-
-    .research-card {
-      border-top: 3px solid var(--accent);
-    }
-
-    /* PEOPLE */
-
-    .people-category {
-      margin-top: 38px;
-    }
-
-    .people-category:first-of-type {
-      margin-top: 25px;
-    }
-
-    .people-heading {
-      color: var(--primary);
-      font-size: 23px;
-      margin-bottom: 18px;
-    }
-
-    .people-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .person-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 23px;
-      overflow-wrap: anywhere;
-    }
-
-    .person-photo {
-      width: 110px;
-      height: 110px;
-      object-fit: cover;
-      border-radius: 50%;
-      display: block;
-      margin-bottom: 17px;
-      background: #e2e8f0;
-    }
-
-    .person-card h4 {
-      color: var(--primary-dark);
-      font-size: 18px;
-      margin-bottom: 5px;
-    }
-
-    .person-role {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 12px;
-    }
-
-    .status {
-      display: inline-block;
-      padding: 4px 10px;
-      font-size: 12px;
-      font-weight: 700;
-      border-radius: 20px;
-      margin-top: 8px;
-    }
-
-    .ongoing {
-      color: #166534;
-      background: #dcfce7;
-    }
-
-    .completed {
-      color: #334155;
-      background: #e2e8f0;
-    }
-
-    .person-card a {
-      color: #245b91;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    /* PROJECTS AND PUBLICATIONS */
-
-    .project-tag {
-      display: inline-block;
-      color: #8a641d;
-      background: #fbf2df;
-      border-radius: 4px;
-      padding: 4px 8px;
-      font-size: 11px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .publication-list {
-      display: grid;
-      gap: 16px;
-    }
-
-    .publication {
-      padding: 20px 22px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-    }
-
-    .publication h3 {
-      font-size: 17px;
-      color: var(--primary);
-      margin-bottom: 6px;
-    }
-
-    .publication p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* OPPORTUNITIES */
-
-    .opportunity-box {
-      background: var(--primary-dark);
-      color: var(--white);
-      padding: 35px;
-      border-radius: 12px;
-    }
-
-    .opportunity-box h3 {
-      font-size: 25px;
-      margin-bottom: 12px;
-    }
-
-    .opportunity-box p {
-      color: #dbe5ef;
       margin-bottom: 20px;
     }
 
-    /* CONTACT */
+    .hero h1 {
+      font-size: clamp(55px, 8vw, 92px);
+      line-height: 0.95;
 
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 45px;
+      letter-spacing: -5px;
+
+      color: #0c1c3c;
+
+      margin-bottom: 25px;
     }
 
-    .contact-text {
-      color: var(--muted);
-      margin-bottom: 24px;
+    .hero h1 span {
+      color: #1468c9;
     }
 
-    .contact-info {
-      font-style: normal;
-      display: grid;
-      gap: 13px;
+    .hero-institute {
+      font-size: 27px;
+      font-weight: 700;
+
+      color: #17284b;
+
+      margin-bottom: 17px;
     }
 
-    .contact-item {
-      overflow-wrap: anywhere;
+    .hero-description {
+      max-width: 650px;
+
+      font-size: 18px;
+
+      color: #52627d;
+
+      margin-bottom: 32px;
     }
 
-    .contact-item a {
-      color: #245b91;
-    }
-
-    .contact-item a:hover {
-      text-decoration: underline;
-    }
-
-    .contact-note {
-      padding: 25px;
-      background: var(--background);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-    }
-
-    .contact-note h3 {
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #071b30;
-      color: #dbe5ef;
-      padding: 30px 0;
-      font-size: 13px;
-    }
-
-    .footer-inner {
+    .buttons {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
+      gap: 13px;
       flex-wrap: wrap;
     }
 
-    footer a:hover {
-      color: #f0cb7b;
+    .btn {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 14px 24px;
+
+      border-radius: 999px;
+
+      font-weight: 750;
+
+      transition: 0.25s;
     }
 
-    /* RESPONSIVE */
+    .btn-primary {
+      background: #1468c9;
+      color: #ffffff;
 
-    @media (max-width: 900px) {
-      .nav {
-        padding: 15px 0;
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .nav-links {
-        gap: 12px 18px;
-      }
-
-      .grid,
-      .people-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      box-shadow: 0 10px 25px rgba(20,104,201,0.22);
     }
 
-    @media (max-width: 600px) {
-      .section {
-        padding: 60px 0;
-      }
-
-      .grid,
-      .people-grid,
-      .contact-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: 480px;
-      }
-
-      .hero-content {
-        padding: 75px 0;
-      }
-
-      .button-outline {
-        margin: 12px 0 0;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #0d58ad;
     }
-  </style>
-</head>
-
-<body>
-
-  <!-- =========================================================
-       NAVIGATION
-  ========================================================== -->
-
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#home">
-        SPAA LAB
-        <span>IIT DHARWAD</span>
-      </a>
-
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#research">Research</a>
-        <a href="#people">People</a>
-        <a href="#projects">Projects</a>
-        <a href="#publications">Publications</a>
-        <a href="#opportunities">Opportunities</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- =========================================================
-         HOME
-    ========================================================== -->
-
-    <section class="hero" id="home">
-      <div class="container hero-content">
-        <div class="eyebrow">
-          Indian Institute of Technology Dharwad
-        </div>
-
-        <h1>
-          Signal Processing and AI Accelerators Lab
-        </h1>
-
-        <p>
-          SPAA Lab explores VLSI design, efficient AI hardware,
-          deep learning accelerators, inference optimization,
-          speech processing, and digital signal processing.
-        </p>
-
-        <a class="button" href="#research">Explore Research</a>
-        <a class="button-outline" href="#people">Meet the Team</a>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         RESEARCH
-    ========================================================== -->
-
-    <section class="section" id="research">
-      <div class="container">
-        <div class="section-label">Research</div>
-        <h2 class="section-title">Research Areas</h2>
-
-        <p class="section-intro">
-          Our research interests span efficient computing architectures,
-          signal processing, and hardware-oriented AI optimization.
-        </p>
-
-        <div class="grid">
-          <article class="card research-card">
-            <h3>AI/ML Hardware Accelerators</h3>
-            <p>Hardware architectures for efficient machine learning and AI workloads.</p>
-          </article>
-
-          <article class="card research-card">
-            <h3>Edge Computing</h3>
-            <p>Computing architectures for AI inference at the edge.</p>
-          </article>
-
-          <article class="card research-card">
-            <h3>Deep Learning Accelerators</h3>
-            <p>High-performance architectures for deep learning computation.</p>
-          </article>
-
-          <article class="card research-card">
-            <h3>Inference Optimization</h3>
-            <p>Model and computation optimization for efficient AI inference.</p>
-          </article>
-
-          <article class="card research-card">
-            <h3>Speech Processing</h3>
-            <p>Speech processing, enhancement, and related signal processing techniques.</p>
-          </article>
-
-          <article class="card research-card">
-            <h3>VLSI and Digital Signal Processing</h3>
-            <p>Digital hardware design and signal processing architectures.</p>
-          </article>
-
-          <article class="card research-card">
-            <h3>Energy-Efficient Computing</h3>
-            <p>Architectural approaches to improving computing efficiency.</p>
-          </article>
-
-          <article class="card research-card">
-            <h3>Low-Latency AI Accelerators</h3>
-            <p>Hardware approaches targeting efficient, low-latency AI workloads.</p>
-          </article>
-
-          <article class="card research-card">
-            <h3>LLM Optimization</h3>
-            <p>Optimization methods for large language model inference and deployment.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         PEOPLE
-    ========================================================== -->
-
-    <section class="section section-alt" id="people">
-      <div class="container">
-        <div class="section-label">Our Team</div>
-        <h2 class="section-title">People</h2>
-
-        <p class="section-intro">
-          Meet the faculty, research scholars, students, and interns
-          associated with SPAA Lab.
-        </p>
-
-        <!-- FACULTY -->
-
-        <div class="people-category">
-          <h3 class="people-heading">Faculty</h3>
-
-          <div class="people-grid">
-            <article class="person-card">
-              <!-- Replace with the actual faculty photo path -->
-              <img
-                class="person-photo"
-                src="images/faculty.jpg"
-                alt="Prof. Samba Raju Chiluveru"
-                loading="lazy"
-              >
-
-              <h4>Prof. Samba Raju Chiluveru</h4>
-
-              <p class="person-role">
-                Assistant Professor<br>
-                Department of EECE, IIT Dharwad
-              </p>
-
-              <a href="mailto:sambaee@iitdh.ac.in">
-                sambaee@iitdh.ac.in
-              </a>
-            </article>
-          </div>
-        </div>
-
-        <!-- STUDENTS -->
-
-        <div class="people-category">
-          <h3 class="people-heading">Students</h3>
-
-          <!-- PhD -->
-
-          <h4 class="people-heading">Ph.D. Scholars</h4>
-
-          <div class="people-grid">
-            <!-- Duplicate this card for each Ph.D. scholar -->
-            <article class="person-card">
-              <h4>Student Name</h4>
-              <p class="person-role">Ph.D. Scholar</p>
-              <span class="status ongoing">Ongoing</span>
-            </article>
-
-            <!-- Example of a completed Ph.D. -->
-            <article class="person-card">
-              <h4>Student Name</h4>
-              <p class="person-role">Ph.D. Scholar</p>
-              <span class="status completed">Completed</span>
-            </article>
-          </div>
-
-          <!-- MTECH BY RESEARCH -->
-
-          <h4 class="people-heading" style="margin-top: 30px;">
-            M.Tech by Research Scholars
-          </h4>
-
-          <div class="people-grid">
-            <article class="person-card">
-              <h4>Student Name</h4>
-              <p class="person-role">M.Tech by Research</p>
-              <span class="status ongoing">Ongoing</span>
-            </article>
-
-            <article class="person-card">
-              <h4>Student Name</h4>
-              <p class="person-role">M.Tech by Research</p>
-              <span class="status completed">Completed</span>
-            </article>
-          </div>
-
-          <!-- MTECH -->
-
-          <h4 class="people-heading" style="margin-top: 30px;">
-            M.Tech Scholars
-          </h4>
-
-          <div class="people-grid">
-            <article class="person-card">
-              <h4>Student Name</h4>
-              <p class="person-role">M.Tech</p>
-              <span class="status ongoing">Ongoing</span>
-            </article>
-
-            <article class="person-card">
-              <h4>Student Name</h4>
-              <p class="person-role">M.Tech</p>
-              <span class="status completed">Completed</span>
-            </article>
-          </div>
-        </div>
-
-        <!-- INTERNS -->
-
-        <div class="people-category">
-          <h3 class="people-heading">Interns</h3>
-
-          <div class="people-grid">
-            <article class="person-card">
-              <h4>Intern Name</h4>
-              <p class="person-role">Research Intern</p>
-              <span class="status ongoing">Ongoing</span>
-            </article>
-
-            <article class="person-card">
-              <h4>Intern Name</h4>
-              <p class="person-role">Research Intern</p>
-              <span class="status completed">Completed</span>
-            </article>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =========================================================
-         PROJECTS
-    ========================================================== -->
-
-    <section class="section" id="projects">
-      <div class="container">
-        <div class="section-label">Projects</div>
-        <h2 class="section-title">Research Projects</h2>
-
-        <p class="section-intro">
-          Add verified lab projects, their descriptions, collaborators,
-          and project links here.
-        </p>
-
-        <div class="grid">
-          <article class="card">
-            <span class="project-tag">AI / ML</span>
-            <h3>AI-Based Crop Disease Detection System</h3>
-            <p>
-              Project details and team information can be added here
-              after verification.
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="project-tag">VLSI</span>
-            <h3>Design and Analysis of CMOS Low Noise Amplifier</h3>
-            <p>
-              Add the project description, tools, and verified contributors.
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="project-tag">Embedded Systems</span>
-            <h3>Smart Street Lighting System</h3>
-            <p>
-              Add the project summary and verified project information.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         PUBLICATIONS
-    ========================================================== -->
-
-    <section class="section section-alt" id="publications">
-      <div class="container">
-        <div class="section-label">Publications</div>
-        <h2 class="section-title">Selected Publications</h2>
-
-        <p class="section-intro">
-          Add verified journal and conference publications with their
-          authors, venue, year, and DOI or publisher links.
-        </p>
-
-        <div class="publication-list">
-          <article class="publication">
-            <h3>Publication title</h3>
-            <p>
-              Add the exact publication title, author list, venue,
-              publication year, and verified link.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         OPPORTUNITIES
-    ========================================================== -->
-
-    <section class="section" id="opportunities">
-      <div class="container">
-        <div class="section-label">Opportunities</div>
-        <h2 class="section-title">Work With Us</h2>
-
-        <div class="opportunity-box">
-          <h3>Interested in research at SPAA Lab?</h3>
-
-          <p>
-            For inquiries about research collaboration, student projects,
-            internships, or research opportunities, contact the faculty
-            member directly. Please confirm current openings before applying.
-          </p>
-
-          <a class="button" href="mailto:sambaee@iitdh.ac.in">
-            Contact the Lab
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         CONTACT
-    ========================================================== -->
-
-    <section class="section section-alt" id="contact">
-      <div class="container contact-layout">
-
-        <div>
-          <div class="section-label">Contact</div>
-
-          <h2 id="contact-title" class="section-title">
-            Get in touch.
-          </h2>
-
-          <p class="contact-text">
-            For research collaboration, speaking requests, student opportunities,
-            and inquiries regarding SPAA Lab, please contact
-            <strong>Prof. Samba Raju Chiluveru</strong>.
-          </p>
-
-          <address class="contact-info">
-            <div class="contact-item">
-              <a href="mailto:sambaee@iitdh.ac.in">
-                sambaee@iitdh.ac.in
-              </a>
-            </div>
-
-            <div class="contact-item">
-              <a href="tel:+918362309733">
-                +91 836 230 9733
-              </a>
-            </div>
-
-            <div class="contact-item">
-              A1–340, Academic Block-I
-            </div>
-
-            <div class="contact-item">
-              IIT Dharwad, Karnataka, India
-            </div>
-          </address>
-        </div>
-
-        <div class="contact-note">
-          <h3>SPAA Lab</h3>
-          <p>
-            Signal Processing and AI Accelerators Lab
-          </p>
-          <p>
-            Indian Institute of Technology Dharwad
-          </p>
-          <p>
-            Research areas: VLSI, AI Accelerators, Edge Computing,
-            AI Optimization, and Digital Signal Processing.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- =========================================================
-       FOOTER
-  ========================================================== -->
-
-  <footer>
-    <div class="container footer-inner">
-
-      <div>
-        © 2026 SPAA Lab · IIT Dharwad
-      </div>
-
-      <div>
-        <a href="mailto:sambaee@iitdh.ac.in">
-          sambaee@iitdh.ac.in
-        </a>
-        ·
-        <a href="tel:+918362309733">
-          +91 836 230 9733
-        </a>
-      </div>
-
-      <div>
-        VLSI · AI Accelerators · Edge Computing · AI Optimization
-      </div>
-
-      <div>
-        <a href="#home">Back to top ↑</a>
-      </div>
-
-    </div>
-  </footer>
-
-</body>
-</html>
-```
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.92);
+
+      color: #12234a;
+
+      border: 1px solid #d6deea;
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+
+      border-color: #1468c9;
+
+      color: #1468c9;
+    }
+
+
+    /* =========================================================
+       RESEARCH FOCUS BAR
+    ========================================================= */
+
+    .focus-bar {
+      width: min(1120px, 88%);
+
+      margin: -42px auto 0;
+
+      position: relative;
+      z-index: 5;
+
+      background: rgba(255,255,255,0.95);
+
+      backdrop-filter: blur(12px);
+
+      border: 1px solid #e4ebf4;
+
+      border-radius: 22px;
+
+      box-shadow: 0 18px 50px rgba(28,55,90,0.10);
+
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      padding: 24px;
+    }
+
+    .focus-item {
+      display: flex;
+      align-items: center;
+
+      gap: 14px;
+
+      padding: 5px 20px;
+
+      border-right: 1px solid #dce4ee;
+    }
+
+    .focus-item:last-child {
+      border-right: none;
+    }
+
+    .focus-icon {
+      width: 47px;
+      height: 47px;
+
+      border-radius: 14px;
+
+      background: #edf6ff;
+
+      color: #1468c9;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 21px;
+
+      flex-shrink: 0;
+    }
+
+    .focus-item h3 {
+      font-size: 14px;
+      color: #142653;
+    }
+
+    .focus-item p {
+      font-size: 11px;
+      color: #71809a;
+    }
+
+
+    /* =========================================================
+       GENERAL SECTIONS
+    ========================================================= */
+
+    section {
+      padding: 95px 0;
+    }
+
+    .section-label {
+      text-align: center;
+
+      text-transform: uppercase;
+
+      letter-spacing: 4px;
+
+      font-size: 11px;
+
+      font-weight: 800;
+
+      color: #72819a;
+
+      margin-bottom: 10px;
+    }
+
+    .section-label::after {
+      content: "";
+
+      display: block;
+
+      width: 46px;
+      height: 3px;
+
+      background: #d49b32;
+
+      margin: 12px auto 0;
+    }
+
+    .section-title {
+      text-align: center;
+
+      font-size: 42px;
+
+      letter-spacing: -1.5px;
+
+      color: #102044;
+
+      margin-bottom: 16px;
+    }
+
+    .section-description {
+      max-width: 720px;
+
+      margin: 0 auto 45px;
+
+      text-align: center;
+
+      color: #66748d;
+
+      font-size: 17px;
+    }
+
+
+    /* =========================================================
+       RESEARCH
+    ========================================================= */
+<style>
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+  }
+
+  .research-card {
+    padding: 32px;
+    border-radius: 18px;
+    border: 1px solid #e4ebf4;
+    background: #ffffff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  .research-card:hover,
+  .research-card:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(24, 58, 100, 0.08);
+    border-color: #c7dcf5;
+  }
+
+  .research-number {
+    color: #1468c9;
+    font-weight: 800;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .research-card h3 {
+    font-size: 21px;
+    line-height: 1.3;
+    color: #132550;
+    margin-bottom: 12px;
+  }
+
+  .research-card p {
+    color: #5b6a82;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 600px) {
+    .research-card {
+      padding: 24px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .research-card {
+      transition: none;
+    }
+    .research-card:hover,
+    .research-card:focus-within {
+      transform: none;
+    }
+  }
+</style>
+
+<div class="research-grid">
+
+  <div class="research-card">
+    <div class="research-number">01</div>
+    <h3>VLSI AI Accelerators</h3>
+    <p>Hardware designs that run neural networks fast and with low power.</p>
+  </div>
+
+  <div class="research-card">
+    <div class="research-number">02</div>
+    <h3>Edge Computing</h3>
+    <p>Running AI on small devices, close to where the data is produced.</p>
+  </div>
+
+  <div class="research-card">
+    <div class="research-number">03</div>
+    <h3>Quantization and AI Optimization</h3>
+    <p>Making deep learning models and LLMs smaller and faster.</p>
+  </div>
+
+</div>
