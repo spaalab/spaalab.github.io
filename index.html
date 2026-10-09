@@ -1,1 +1,375 @@
 
+    /* =========================================================
+       GENERAL SECTIONS
+    ========================================================= */
+
+    section {
+      padding: 95px 0;
+    }
+
+    .section-label {
+      text-align: center;
+
+      text-transform: uppercase;
+
+      letter-spacing: 4px;
+
+      font-size: 11px;
+
+      font-weight: 800;
+
+      color: #72819a;
+
+      margin-bottom: 10px;
+    }
+
+    .section-label::after {
+      content: "";
+
+      display: block;
+
+      width: 46px;
+      height: 3px;
+
+      background: #d49b32;
+
+      margin: 12px auto 0;
+    }
+
+    .section-title {
+      text-align: center;
+
+      font-size: 42px;
+
+      letter-spacing: -1.5px;
+
+      color: #102044;
+
+      margin-bottom: 16px;
+    }
+
+    .section-description {
+      max-width: 720px;
+
+      margin: 0 auto 45px;
+
+      text-align: center;
+
+      color: #66748d;
+
+      font-size: 17px;
+    }
+
+
+    /* =========================================================
+       RESEARCH
+    ========================================================= */
+<style>
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+  }
+
+  .research-card {
+    padding: 32px;
+    border-radius: 18px;
+    border: 1px solid #e4ebf4;
+    background: #ffffff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  .research-card:hover,
+  .research-card:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(24, 58, 100, 0.08);
+    border-color: #c7dcf5;
+  }
+
+  .research-number {
+    color: #1468c9;
+    font-weight: 800;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .research-card h3 {
+    font-size: 21px;
+    line-height: 1.3;
+    color: #132550;
+    margin-bottom: 12px;
+  }
+
+  .research-card p {
+    color: #5b6a82;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 600px) {
+    .research-card {
+      padding: 24px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .research-card {
+      transition: none;
+    }
+    .research-card:hover,
+    .research-card:focus-within {
+      transform: none;
+    }
+  }
+</style>
+
+<div class="research-grid">
+
+  <div class="research-card">
+    <div class="research-number">01</div>
+    <h3>VLSI AI Accelerators</h3>
+    <p>Hardware designs that run neural networks fast and with low power.</p>
+  </div>
+
+  <div class="research-card">
+    <div class="research-number">02</div>
+    <h3>Edge Computing</h3>
+    <p>Running AI on small devices, close to where the data is produced.</p>
+  </div>
+
+  <div class="research-card">
+    <div class="research-number">03</div>
+    <h3>Quantization and AI Optimization</h3>
+    <p>Making deep learning models and LLMs smaller and faster.</p>
+  </div>
+
+</div>
+
+
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    .about {
+      background: #f6f9fc;
+    }
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns: 1.1fr 0.9fr;
+
+      gap: 65px;
+
+      align-items: center;
+    }
+
+    .about .section-label {
+      text-align: left;
+    }
+
+    .about .section-label::after {
+      margin-left: 0;
+    }
+
+    .about .section-title {
+      text-align: left;
+    }
+
+    .about-text p {
+      color: #596982;
+
+      font-size: 17px;
+
+      margin-bottom: 18px;
+    }
+
+    .highlight {
+      background: #102044;
+
+      color: white;
+
+      padding: 38px;
+
+      border-radius: 22px;
+
+      box-shadow: 0 20px 45px rgba(16,32,68,0.15);
+    }
+
+    .highlight h3 {
+      font-size: 25px;
+
+      margin-bottom: 15px;
+    }
+
+    .highlight p {
+      color: #d7dfed;
+    }
+
+
+    /* =========================================================
+       FACULTY
+    ========================================================= */
+
+    .faculty-profile {
+      max-width: 1080px;
+
+      margin: 0 auto;
+
+      display: grid;
+
+      grid-template-columns: 300px 1fr;
+
+      gap: 55px;
+
+      padding: 42px;
+
+      background: #ffffff;
+
+      border: 1px solid #e2e9f2;
+
+      border-radius: 24px;
+
+      box-shadow: 0 20px 50px rgba(24,58,100,0.08);
+    }
+
+    .faculty-photo {
+      min-height: 370px;
+
+      border-radius: 20px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #eaf4ff,
+          #dcecff
+        );
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+    }
+
+    .faculty-initials {
+      width: 150px;
+      height: 150px;
+
+      border-radius: 50%;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      background: #1468c9;
+
+      color: #ffffff;
+
+      font-size: 40px;
+
+      font-weight: 800;
+
+      box-shadow:
+        0 15px 35px rgba(20,104,201,0.25);
+    }
+
+    .faculty-role {
+      color: #1468c9;
+
+      font-size: 11px;
+
+      font-weight: 800;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 10px;
+    }
+
+    .faculty-info h3 {
+      font-size: 35px;
+
+      line-height: 1.15;
+
+      color: #102044;
+
+      margin-bottom: 8px;
+    }
+
+    .faculty-position {
+      color: #1468c9;
+
+      font-size: 18px;
+
+      font-weight: 700;
+    }
+
+    .faculty-department {
+      color: #65748d;
+
+      font-size: 15px;
+
+      margin-top: 3px;
+
+      margin-bottom: 24px;
+    }
+
+    .faculty-bio {
+      color: #596982;
+
+      font-size: 15.5px;
+
+      line-height: 1.75;
+
+      margin-bottom: 15px;
+    }
+
+    .faculty-info h4 {
+      color: #102044;
+
+      font-size: 19px;
+
+      margin-top: 25px;
+
+      margin-bottom: 15px;
+    }
+
+    .research-interests {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 9px;
+    }
+
+    .research-interests span {
+      padding: 8px 13px;
+
+      border-radius: 999px;
+
+      background: #edf6ff;
+
+      color: #1468c9;
+
+      border: 1px solid #d7e9fb;
+
+      font-size: 12px;
+
+      font-weight: 650;
+    }
+
+    .faculty-contact {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 27px;
+
+      padding-top: 22px;
+
+      border-top: 1px solid #e5ebf3;
+    }
