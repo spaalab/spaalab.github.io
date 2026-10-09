@@ -870,8 +870,132 @@
     .doi-link:hover {
       background: #0d58ad;
     }
+ /* =========================================================
+    PEOPLE
+    
+ ========================================================= */
+     ```css
+/* PEOPLE SECTION */
+#people {
+  padding: 60px 5%;
+  background: #f8fafc;
+}
 
+.people-heading {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 12px;
+  color: #172033;
+}
 
+.people-subheading {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 45px;
+}
+
+.people-category {
+  max-width: 1200px;
+  margin: 0 auto 45px;
+}
+
+.people-category h3 {
+  font-size: 25px;
+  color: #172033;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 12px;
+  margin-bottom: 22px;
+}
+
+.people-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+
+.person-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.12);
+}
+
+.person-photo {
+  width: 200px;
+  min-width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.person-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.person-details h4 {
+  font-size: 23px;
+  margin: 2px 0 5px;
+  color: #171717;
+}
+
+.person-department {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.person-email {
+  margin: 5px 0 14px;
+  overflow-wrap: anywhere;
+}
+
+.person-email a {
+  color: #334155;
+  text-decoration: none;
+}
+
+.person-meta {
+  margin: 8px 0;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.person-meta strong {
+  font-size: 14px;
+  color: #222;
+}
+
+.person-interest-title {
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.person-interests {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .person-card {
+    flex-direction: column;
+  }
+
+  .person-photo {
+    width: 100%;
+    max-width: 240px;
+    height: 220px;
+  }
+
+  .people-heading {
+    font-size: 29px;
+  }
+}
+```
     /* =========================================================
        CONTACT
     ========================================================= */
