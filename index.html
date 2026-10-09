@@ -394,7 +394,6 @@
     /* =========================================================
        RESEARCH
     ========================================================= */
-<style>
   .research-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -417,7 +416,8 @@
   }
 
   .research-number {
-    color: #1468c9;    font-weight: 800;
+    color: #1468c9;
+    font-weight: 800;
     font-size: 14px;
     margin-bottom: 20px;
   }
@@ -449,30 +449,8 @@
       transform: none;
     }
   }
-</style>
 
-<div class="research-grid">
-
-  <div class="research-card">
-    <div class="research-number">01</div>
-    <h3>VLSI AI Accelerators</h3>
-    <p>Hardware designs that run neural networks fast and with low power.</p>
-  </div>
-
-  <div class="research-card">
-    <div class="research-number">02</div>
-    <h3>Edge Computing</h3>
-    <p>Running AI on small devices, close to where the data is produced.</p>
-  </div>
-
-  <div class="research-card">
-    <div class="research-number">03</div>
-    <h3>Quantization and AI Optimization</h3>
-    <p>Making deep learning models and LLMs smaller and faster.</p>
-  </div>
-
-</div>
-
+   
 
 
     /* =========================================================
@@ -836,7 +814,8 @@
 
       font-size: 14px;
 
-      margin-bottom: 4px;    }
+      margin-bottom: 4px;
+    }
 
     .publication-venue {
       color: #6a7890;
@@ -1125,6 +1104,184 @@
       }
     }
 
+
+    /* Recovered research-card styles */
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+  }
+
+  .research-card {
+    padding: 32px;
+    border-radius: 18px;
+    border: 1px solid #e4ebf4;
+    background: #ffffff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  .research-card:hover,
+  .research-card:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(24, 58, 100, 0.08);
+    border-color: #c7dcf5;
+  }
+
+  .research-number {
+    color: #1468c9;
+    font-weight: 800;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .research-card h3 {
+    font-size: 21px;
+    line-height: 1.3;
+    color: #132550;
+    margin-bottom: 12px;
+  }
+
+  .research-card p {
+    color: #5b6a82;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 600px) {
+    .research-card {
+      padding: 24px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .research-card {
+      transition: none;
+    }
+    .research-card:hover,
+    .research-card:focus-within {
+      transform: none;
+    }
+  }
+
+    /* Recovered faculty styles */
+  .faculty-profile {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 55px;
+    padding: 42px;
+    background: #ffffff;
+    border: 1px solid #e2e9f2;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(24, 58, 100, 0.08);
+  }
+
+  .faculty-photo {
+    min-height: 370px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #eaf4ff, #dcecff);
+    overflow: hidden;
+  }
+
+  .faculty-photo img {
+    width: 100%;
+    height: 100%;
+    min-height: 370px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  .faculty-role {
+    color: #1468c9;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+
+  .faculty-info h3 {
+    font-size: 35px;
+    line-height: 1.15;
+    color: #102044;
+    margin-bottom: 8px;
+  }
+
+  .faculty-position {
+    color: #1468c9;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .faculty-department {
+    color: #65748d;
+    font-size: 15px;
+    margin-top: 3px;
+    margin-bottom: 24px;
+  }
+
+  .faculty-bio {
+    color: #596982;
+    font-size: 15.5px;
+    line-height: 1.75;
+    margin-bottom: 15px;
+  }
+
+  .faculty-info h4 {
+    color: #102044;
+    font-size: 19px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+
+  .research-interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+
+  .research-interests span {
+    padding: 8px 13px;
+    border-radius: 999px;
+    background: #edf6ff;
+    color: #1468c9;
+    border: 1px solid #d7e9fb;
+    font-size: 12px;
+    font-weight: 650;
+  }
+
+  .faculty-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 27px;
+    padding-top: 22px;
+    border-top: 1px solid #e5ebf3;
+  }
+
+  .faculty-contact a,
+  .faculty-contact span {
+    padding: 9px 13px;
+    border-radius: 8px;
+    background: #f6f8fb;
+    color: #34445f;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .faculty-contact a:hover {
+    color: #1468c9;
+  }
+
+  @media (max-width: 800px) {
+    .faculty-profile {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 24px;
+    }
+  }
+
   </style>
 </head>
 
@@ -1255,7 +1412,9 @@
       <div>
         <h3>
           VLSI & AI Accelerators
-        </h3>        <p>
+        </h3>
+
+        <p>
           Efficient AI Hardware
         </p>
       </div>
@@ -1526,127 +1685,9 @@
   <!-- =========================================================
        FACULTY
   ========================================================= -->
-<style>
-  .faculty-profile {
-    max-width: 1080px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 55px;
-    padding: 42px;
-    background: #ffffff;
-    border: 1px solid #e2e9f2;
-    border-radius: 24px;
-    box-shadow: 0 20px 50px rgba(24, 58, 100, 0.08);
-  }
 
-  .faculty-photo {
-    min-height: 370px;
-    border-radius: 20px;
-    background: linear-gradient(145deg, #eaf4ff, #dcecff);
-    overflow: hidden;
-  }
-
-  .faculty-photo img {
-    width: 100%;
-    height: 100%;
-    min-height: 370px;
-    object-fit: cover;
-    object-position: top center;
-    display: block;
-  }
-
-  .faculty-role {
-    color: #1468c9;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-  }
-
-  .faculty-info h3 {
-    font-size: 35px;
-    line-height: 1.15;
-    color: #102044;
-    margin-bottom: 8px;
-  }
-
-  .faculty-position {
-    color: #1468c9;
-    font-size: 18px;
-    font-weight: 700;
-  }
-
-  .faculty-department {
-    color: #65748d;
-    font-size: 15px;
-    margin-top: 3px;
-    margin-bottom: 24px;
-  }
-
-  .faculty-bio {
-    color: #596982;
-    font-size: 15.5px;
-    line-height: 1.75;
-    margin-bottom: 15px;
-  }
-
-  .faculty-info h4 {
-    color: #102044;
-    font-size: 19px;
-    margin-top: 25px;
-    margin-bottom: 15px;
-  }
-
-  .research-interests {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 9px;
-  }
-
-  .research-interests span {
-    padding: 8px 13px;
-    border-radius: 999px;
-    background: #edf6ff;
-    color: #1468c9;
-    border: 1px solid #d7e9fb;
-    font-size: 12px;
-    font-weight: 650;
-  }
-
-  .faculty-contact {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 27px;
-    padding-top: 22px;
-    border-top: 1px solid #e5ebf3;
-  }
-
-  .faculty-contact a,
-  .faculty-contact span {
-    padding: 9px 13px;
-    border-radius: 8px;
-    background: #f6f8fb;
-    color: #34445f;
-    font-size: 12px;
-    font-weight: 600;
-    text-decoration: none;
-  }
-
-  .faculty-contact a:hover {
-    color: #1468c9;
-  }
-
-  @media (max-width: 800px) {
-    .faculty-profile {
-      grid-template-columns: 1fr;
-      gap: 30px;
-      padding: 24px;
-    }
-  }
-</style>
-
+<section id="faculty">
+  <div class="container">
 <div class="faculty-profile">
 
   <div class="faculty-photo">
@@ -1673,17 +1714,16 @@
       <span>AI Optimization</span>
     </div>
 
-    <div class="faculty-contact">      <a href="mailto:sambaee@iitdh.ac.in">sambaee@iitdh.ac.in</a>
+    <div class="faculty-contact">
+      <a href="mailto:sambaee@iitdh.ac.in">sambaee@iitdh.ac.in</a>
       <a href="tel:+918362309733">+91 836 230 9733</a>
       <span>A1–340, Academic Block-I</span>
     </div>
   </div>
 
 </div>
-
-
-
-
+  </div>
+</section>
 
   <!-- =========================================================
        PUBLICATIONS
@@ -2092,7 +2132,8 @@
 
         <article class="publication">
 
-          <div class="publication-number">            JOURNAL · 09
+          <div class="publication-number">
+            JOURNAL · 09
           </div>
 
           <h4>
@@ -2353,4 +2394,9 @@
 
 </body>
 </html>
+
+
       
+
+
+  
