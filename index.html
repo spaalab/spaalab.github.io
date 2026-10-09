@@ -6,16 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>SPAA Lab | IIT Dharwad</title>
-  <meta name="description" content="Signal Processing and AI Accelerators (SPAA) Lab at IIT Dharwad. Research in VLSI, AI accelerators, efficient computing and signal processing.">
+  <meta name="description" content="Signal Processing and AI Accelerators Lab at IIT Dharwad. Research in VLSI, AI accelerators, deep learning, speech processing, and digital signal processing.">
 
   <style>
     :root {
-      --navy: #10233f;
-      --blue: #2457a7;
-      --light: #f4f7fb;
-      --text: #263449;
+      --primary: #123b67;
+      --primary-dark: #0a2540;
+      --accent: #d5a64b;
+      --background: #f6f8fb;
+      --text: #1e293b;
       --muted: #64748b;
-      --border: #dce4ee;
+      --border: #e2e8f0;
       --white: #ffffff;
     }
 
@@ -27,13 +28,14 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 85px;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      line-height: 1.7;
       background: var(--white);
+      line-height: 1.7;
     }
 
     a {
@@ -43,312 +45,329 @@
 
     .container {
       width: min(1120px, 90%);
-      margin: auto;
+      margin: 0 auto;
     }
 
-    nav {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
+    /* NAVIGATION */
+
+    header {
       position: sticky;
       top: 0;
       z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
     }
 
-    .nav-inner {
+    .nav {
       min-height: 76px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 24px;
     }
 
-    .logo {
-      color: var(--navy);
-      font-size: 24px;
+    .brand {
+      font-size: 21px;
       font-weight: 800;
+      color: var(--primary);
       white-space: nowrap;
     }
 
-    .logo span {
-      color: var(--blue);
+    .brand span {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 1px;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 22px;
-      list-style: none;
+      gap: 21px;
       flex-wrap: wrap;
     }
 
     .nav-links a {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
+      color: #334155;
     }
 
-    .nav-links a:hover,
-    footer a:hover {
-      color: #75a7ff;
+    .nav-links a:hover {
+      color: var(--accent);
     }
+
+    /* HERO */
 
     .hero {
-      background:
-        linear-gradient(100deg, rgba(8, 23, 45, .91), rgba(17, 53, 94, .77)),
-        url("iitdh.jpg") center/cover no-repeat;
-      color: var(--white);
-      padding: 115px 0;
-      min-height: 460px;
+      min-height: 560px;
       display: flex;
       align-items: center;
+      color: var(--white);
+      background:
+        linear-gradient(
+          90deg,
+          rgba(5, 25, 47, 0.93),
+          rgba(10, 37, 64, 0.76)
+        ),
+        url("iitdh.jpg") center/cover no-repeat;
     }
 
-    .eyebrow,
-    .section-label {
-      color: var(--blue);
-      text-transform: uppercase;
+    .hero-content {
+      max-width: 800px;
+      padding: 100px 0;
+    }
+
+    .eyebrow {
+      color: #f0cb7b;
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 700;
+      text-transform: uppercase;
       letter-spacing: 2px;
-      margin-bottom: 14px;
-    }
-
-    .hero .eyebrow {
-      color: #c6dcff;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(38px, 6vw, 66px);
-      line-height: 1.1;
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.13;
+      margin-bottom: 22px;
       letter-spacing: -1.5px;
-      max-width: 850px;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 span {
-      color: #a9ccff;
-    }
-
-    .hero .institute {
-      font-size: 19px;
-      font-weight: 600;
-      margin-bottom: 20px;
     }
 
     .hero p {
-      max-width: 720px;
+      max-width: 680px;
+      color: #e2e8f0;
       font-size: 17px;
-      color: #e2eaf5;
+      margin-bottom: 30px;
     }
 
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .btn {
+    .button {
       display: inline-block;
-      padding: 12px 20px;
-      border-radius: 5px;
-      font-size: 14px;
+      padding: 12px 22px;
+      background: var(--accent);
+      color: #172033;
       font-weight: 700;
+      border-radius: 5px;
     }
 
-    .btn-primary {
-      background: var(--white);
-      color: var(--navy);
+    .button:hover {
+      background: #edc66e;
     }
 
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,.7);
-      color: var(--white);
+    .button-outline {
+      display: inline-block;
+      margin-left: 10px;
+      padding: 11px 22px;
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 5px;
+      color: white;
     }
 
-    section {
-      padding: 82px 0;
-      scroll-margin-top: 80px;
+    /* GENERAL SECTIONS */
+
+    .section {
+      padding: 85px 0;
     }
 
-    section:nth-of-type(even) {
-      background: var(--light);
+    .section-alt {
+      background: var(--background);
+    }
+
+    .section-label {
+      margin-bottom: 8px;
+      color: #a47723;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .section-title {
-      color: var(--navy);
-      font-size: clamp(30px, 4vw, 42px);
-      line-height: 1.2;
+      color: var(--primary-dark);
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.25;
       margin-bottom: 18px;
     }
 
-    .section-description {
+    .section-intro {
       max-width: 760px;
-      color: var(--muted);
       margin-bottom: 35px;
+      color: var(--muted);
     }
 
-    .research-grid,
-    .people-grid,
-    .project-grid,
-    .publication-grid {
+    .grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
+      gap: 22px;
     }
 
-    .research-card,
-    .person-card,
-    .project-card,
-    .publication-card {
-      padding: 25px;
+    .card {
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      box-shadow: 0 5px 18px rgba(16, 35, 63, .035);
+      border-radius: 10px;
+      padding: 25px;
+      height: 100%;
     }
 
-    .research-number {
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--blue);
-      margin-bottom: 14px;
-    }
-
-    .research-card h3,
-    .person-card h3,
-    .project-card h3,
-    .publication-card h3 {
-      color: var(--navy);
+    .card h3 {
+      color: var(--primary);
       font-size: 19px;
-      line-height: 1.4;
       margin-bottom: 10px;
     }
 
-    .research-card p,
-    .person-card p,
-    .project-card p,
-    .publication-card p {
-      font-size: 14px;
+    .card p {
       color: var(--muted);
+      font-size: 14px;
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 45px;
-      align-items: start;
+    /* RESEARCH */
+
+    .research-card {
+      border-top: 3px solid var(--accent);
     }
 
-    .about-grid p {
-      margin-bottom: 16px;
-    }
-
-    .highlight {
-      background: var(--navy);
-      color: var(--white);
-      border-radius: 8px;
-      padding: 28px;
-    }
-
-    .highlight h3 {
-      margin-bottom: 12px;
-    }
-
-    .highlight p {
-      color: #d8e3f2;
-      margin-bottom: 0;
-    }
+    /* PEOPLE */
 
     .people-category {
-      margin-top: 42px;
+      margin-top: 38px;
     }
 
     .people-category:first-of-type {
-      margin-top: 28px;
+      margin-top: 25px;
     }
 
-    .category-title {
-      font-size: 24px;
-      color: var(--navy);
+    .people-heading {
+      color: var(--primary);
+      font-size: 23px;
       margin-bottom: 18px;
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .person-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 23px;
+      overflow-wrap: anywhere;
     }
 
     .person-photo {
-      height: 155px;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #e9eff8;
-      color: #42618a;
-      font-size: 14px;
-      border-radius: 5px;
-      margin-bottom: 18px;
-      overflow: hidden;
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      margin-bottom: 17px;
+      background: #e2e8f0;
     }
 
-    .person-photo img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
+    .person-card h4 {
+      color: var(--primary-dark);
+      font-size: 18px;
+      margin-bottom: 5px;
     }
 
     .person-role {
-      color: var(--blue);
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 9px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 12px;
     }
 
     .status {
       display: inline-block;
-      margin-top: 15px;
       padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 700;
       border-radius: 20px;
-      font-size: 12px;
-      font-weight: 700;
-      background: #e7f5eb;
-      color: #216b3a;
+      margin-top: 8px;
     }
 
-    .status.completed {
-      background: #e8edf5;
-      color: #405574;
+    .ongoing {
+      color: #166534;
+      background: #dcfce7;
     }
 
-    .person-links {
-      margin-top: 14px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+    .completed {
+      color: #334155;
+      background: #e2e8f0;
+    }
+
+    .person-card a {
+      color: #245b91;
       font-size: 13px;
-      color: var(--blue);
+      font-weight: 600;
+    }
+
+    /* PROJECTS AND PUBLICATIONS */
+
+    .project-tag {
+      display: inline-block;
+      color: #8a641d;
+      background: #fbf2df;
+      border-radius: 4px;
+      padding: 4px 8px;
+      font-size: 11px;
       font-weight: 700;
+      margin-bottom: 12px;
     }
 
-    .person-links a:hover {
-      text-decoration: underline;
+    .publication-list {
+      display: grid;
+      gap: 16px;
     }
 
-    .project-card,
-    .publication-card {
-      margin-bottom: 0;
+    .publication {
+      padding: 20px 22px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
     }
 
-    .project-card .meta,
-    .publication-card .meta {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--blue);
-      margin-bottom: 10px;
+    .publication h3 {
+      font-size: 17px;
+      color: var(--primary);
+      margin-bottom: 6px;
     }
 
-    .contact {
-      background: var(--light);
+    .publication p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* OPPORTUNITIES */
+
+    .opportunity-box {
+      background: var(--primary-dark);
+      color: var(--white);
+      padding: 35px;
+      border-radius: 12px;
+    }
+
+    .opportunity-box h3 {
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .opportunity-box p {
+      color: #dbe5ef;
+      margin-bottom: 20px;
+    }
+
+    /* CONTACT */
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 45px;
     }
 
     .contact-text {
-      max-width: 700px;
       color: var(--muted);
       margin-bottom: 24px;
     }
@@ -356,20 +375,38 @@
     .contact-info {
       font-style: normal;
       display: grid;
-      gap: 12px;
+      gap: 13px;
+    }
+
+    .contact-item {
+      overflow-wrap: anywhere;
     }
 
     .contact-item a {
-      color: var(--blue);
+      color: #245b91;
     }
 
     .contact-item a:hover {
       text-decoration: underline;
     }
 
+    .contact-note {
+      padding: 25px;
+      background: var(--background);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .contact-note h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    /* FOOTER */
+
     footer {
-      background: #0b192d;
-      color: #d9e3f0;
+      background: #071b30;
+      color: #dbe5ef;
       padding: 30px 0;
       font-size: 13px;
     }
@@ -377,18 +414,20 @@
     .footer-inner {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 18px;
       flex-wrap: wrap;
-      align-items: center;
     }
 
-    footer a {
-      color: var(--white);
+    footer a:hover {
+      color: #f0cb7b;
     }
 
-    @media (max-width: 850px) {
-      .nav-inner {
-        padding: 16px 0;
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .nav {
+        padding: 15px 0;
         align-items: flex-start;
         flex-direction: column;
       }
@@ -397,44 +436,38 @@
         gap: 12px 18px;
       }
 
-      .research-grid,
-      .people-grid,
-      .project-grid,
-      .publication-grid {
+      .grid,
+      .people-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 85px 0;
       }
     }
 
-    @media (max-width: 560px) {
-      .research-grid,
-      .people-grid,
-      .project-grid,
-      .publication-grid {
-        grid-template-columns: 1fr;
-      }
-
-      section {
+    @media (max-width: 600px) {
+      .section {
         padding: 60px 0;
       }
 
+      .grid,
+      .people-grid,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
       .hero {
-        min-height: 400px;
+        min-height: 480px;
       }
 
-      .nav-links {
-        gap: 10px 14px;
+      .hero-content {
+        padding: 75px 0;
       }
 
-      .nav-links a {
-        font-size: 13px;
+      .button-outline {
+        margin: 12px 0 0;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -442,358 +475,436 @@
 
 <body>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <div class="container nav-inner">
-      <a class="logo" href="#home">SPAA <span>LAB</span></a>
+  <!-- =========================================================
+       NAVIGATION
+  ========================================================== -->
 
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#people">People</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">
+        SPAA LAB
+        <span>IIT DHARWAD</span>
+      </a>
 
-  <!-- HOMEPAGE -->
-  <header class="hero" id="home">
-    <div class="container">
-      <div class="eyebrow">Research Laboratory · IIT Dharwad</div>
-
-      <h1>Signal Processing and <span>AI Accelerators</span> Lab</h1>
-
-      <div class="institute">Indian Institute of Technology Dharwad</div>
-
-      <p>
-        Research at the intersection of VLSI, artificial intelligence
-        accelerators, efficient inference, hardware optimization,
-        speech processing, and digital signal processing.
-      </p>
-
-      <div class="buttons">
-        <a class="btn btn-primary" href="#research">Explore Research</a>
-        <a class="btn btn-secondary" href="#people">Meet the Team</a>
-      </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#research">Research</a>
+        <a href="#people">People</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#opportunities">Opportunities</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-      <div class="section-label">About the Lab</div>
-      <h2 class="section-title">From algorithms to hardware.</h2>
+  <main>
 
-      <div class="about-grid">
-        <div>
-          <p>
-            The Signal Processing and AI Accelerators (SPAA) Lab at
-            IIT Dharwad focuses on research in AI hardware, deep learning
-            accelerators, inference optimization, speech processing,
-            and digital signal processing.
-          </p>
-          <p>
-            The lab explores hardware-aware approaches to efficient
-            computing, connecting algorithmic methods with practical
-            digital hardware design.
-          </p>
+    <!-- =========================================================
+         HOME
+    ========================================================== -->
+
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div class="eyebrow">
+          Indian Institute of Technology Dharwad
         </div>
 
-        <div class="highlight">
-          <h3>Research focus</h3>
-          <p>
-            Efficient AI systems, high-performance accelerators,
-            model optimization, and signal processing.
-          </p>
-        </div>
+        <h1>
+          Signal Processing and AI Accelerators Lab
+        </h1>
+
+        <p>
+          SPAA Lab explores VLSI design, efficient AI hardware,
+          deep learning accelerators, inference optimization,
+          speech processing, and digital signal processing.
+        </p>
+
+        <a class="button" href="#research">Explore Research</a>
+        <a class="button-outline" href="#people">Meet the Team</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- RESEARCH -->
-  <section id="research">
-    <div class="container">
-      <div class="section-label">Research</div>
-      <h2 class="section-title">Research directions</h2>
+    <!-- =========================================================
+         RESEARCH
+    ========================================================== -->
 
-      <p class="section-description">
-        The research themes below reflect the lab's stated areas of interest.
-      </p>
+    <section class="section" id="research">
+      <div class="container">
+        <div class="section-label">Research</div>
+        <h2 class="section-title">Research Areas</h2>
 
-      <div class="research-grid">
-        <article class="research-card">
-          <div class="research-number">01</div>
-          <h3>AI/ML Hardware Accelerators</h3>
-          <p>Hardware architectures for machine learning and AI workloads.</p>
-        </article>
+        <p class="section-intro">
+          Our research interests span efficient computing architectures,
+          signal processing, and hardware-oriented AI optimization.
+        </p>
 
-        <article class="research-card">
-          <div class="research-number">02</div>
-          <h3>Edge Computing</h3>
-          <p>Accelerators for AI applications under edge-device constraints.</p>
-        </article>
+        <div class="grid">
+          <article class="card research-card">
+            <h3>AI/ML Hardware Accelerators</h3>
+            <p>Hardware architectures for efficient machine learning and AI workloads.</p>
+          </article>
 
-        <article class="research-card">
-          <div class="research-number">03</div>
-          <h3>Deep Learning Accelerators</h3>
-          <p>High-performance architectures for deep learning computation.</p>
-        </article>
+          <article class="card research-card">
+            <h3>Edge Computing</h3>
+            <p>Computing architectures for AI inference at the edge.</p>
+          </article>
 
-        <article class="research-card">
-          <div class="research-number">04</div>
-          <h3>Inference Optimization</h3>
-          <p>Methods for efficient inference and model deployment.</p>
-        </article>
+          <article class="card research-card">
+            <h3>Deep Learning Accelerators</h3>
+            <p>High-performance architectures for deep learning computation.</p>
+          </article>
 
-        <article class="research-card">
-          <div class="research-number">05</div>
-          <h3>Speech Processing</h3>
-          <p>Speech enhancement and digital techniques for audio processing.</p>
-        </article>
+          <article class="card research-card">
+            <h3>Inference Optimization</h3>
+            <p>Model and computation optimization for efficient AI inference.</p>
+          </article>
 
-        <article class="research-card">
-          <div class="research-number">06</div>
-          <h3>VLSI and Digital Signal Processing</h3>
-          <p>Digital hardware design and signal-processing architectures.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+          <article class="card research-card">
+            <h3>Speech Processing</h3>
+            <p>Speech processing, enhancement, and related signal processing techniques.</p>
+          </article>
 
-  <!-- PEOPLE -->
-  <section id="people">
-    <div class="container">
-      <div class="section-label">People</div>
-      <h2 class="section-title">Our team</h2>
+          <article class="card research-card">
+            <h3>VLSI and Digital Signal Processing</h3>
+            <p>Digital hardware design and signal processing architectures.</p>
+          </article>
 
-      <p class="section-description">
-        Faculty, research scholars, and students contributing to research
-        at SPAA Lab. Add each person's verified information in the profile
-        cards below.
-      </p>
+          <article class="card research-card">
+            <h3>Energy-Efficient Computing</h3>
+            <p>Architectural approaches to improving computing efficiency.</p>
+          </article>
 
-      <!-- FACULTY -->
-      <div class="people-category">
-        <h3 class="category-title">Faculty</h3>
+          <article class="card research-card">
+            <h3>Low-Latency AI Accelerators</h3>
+            <p>Hardware approaches targeting efficient, low-latency AI workloads.</p>
+          </article>
 
-        <div class="people-grid">
-          <article class="person-card">
-            <div class="person-photo">Faculty photograph</div>
-            <h3>Prof. Samba Raju Chiluveru</h3>
-            <div class="person-role">Faculty In-Charge · SPAA Lab</div>
-            <p>
-              Assistant Professor, Electrical, Electronics and
-              Communication Engineering, IIT Dharwad.
-            </p>
-            <div class="person-links">
-              <a href="mailto:sambaee@iitdh.ac.in">Email</a>
-              <a href="https://www.linkedin.com/in/dr-sambaraju-chiluveru-97426529/"
-                 target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </div>
+          <article class="card research-card">
+            <h3>LLM Optimization</h3>
+            <p>Optimization methods for large language model inference and deployment.</p>
           </article>
         </div>
       </div>
+    </section>
 
-      <!-- PHD SCHOLARS -->
-      <div class="people-category">
-        <h3 class="category-title">Ph.D. Scholars</h3>
+    <!-- =========================================================
+         PEOPLE
+    ========================================================== -->
 
-        <div class="people-grid">
+    <section class="section section-alt" id="people">
+      <div class="container">
+        <div class="section-label">Our Team</div>
+        <h2 class="section-title">People</h2>
 
-          <!-- Copy this card for each Ph.D. scholar -->
-          <article class="person-card">
-            <div class="person-photo">Student photograph</div>
-            <h3>Student Name</h3>
-            <div class="person-role">Ph.D. Scholar</div>
-            <p>Research area: Add the student's research topic.</p>
-            <span class="status">Ongoing</span>
-            <div class="person-links">
-              <a href="#">Profile</a>
-              <a href="#">Google Scholar</a>
-            </div>
-          </article>
+        <p class="section-intro">
+          Meet the faculty, research scholars, students, and interns
+          associated with SPAA Lab.
+        </p>
 
-          <!-- Example completed profile; replace with verified details -->
-          <article class="person-card">
-            <div class="person-photo">Student photograph</div>
-            <h3>Student Name</h3>
-            <div class="person-role">Ph.D. Scholar</div>
-            <p>Research area: Add the student's research topic.</p>
-            <span class="status completed">Completed</span>
-            <div class="person-links">
-              <a href="#">Profile</a>
-              <a href="#">Google Scholar</a>
-            </div>
-          </article>
+        <!-- FACULTY -->
 
-        </div>
-      </div>
+        <div class="people-category">
+          <h3 class="people-heading">Faculty</h3>
 
-      <!-- MTECH BY RESEARCH -->
-      <div class="people-category">
-        <h3 class="category-title">M.Tech by Research Scholars</h3>
+          <div class="people-grid">
+            <article class="person-card">
+              <!-- Replace with the actual faculty photo path -->
+              <img
+                class="person-photo"
+                src="images/faculty.jpg"
+                alt="Prof. Samba Raju Chiluveru"
+                loading="lazy"
+              >
 
-        <div class="people-grid">
-          <article class="person-card">
-            <div class="person-photo">Student photograph</div>
-            <h3>Student Name</h3>
-            <div class="person-role">M.Tech by Research</div>
-            <p>Research area: Add the student's research topic.</p>
-            <span class="status">Ongoing</span>
-            <div class="person-links">
-              <a href="#">Profile</a>
-              <a href="#">Google Scholar</a>
-            </div>
-          </article>
+              <h4>Prof. Samba Raju Chiluveru</h4>
 
-          <article class="person-card">
-            <div class="person-photo">Student photograph</div>
-            <h3>Student Name</h3>
-            <div class="person-role">M.Tech by Research</div>
-            <p>Research area: Add the student's research topic.</p>
-            <span class="status completed">Completed</span>
-            <div class="person-links">
-              <a href="#">Profile</a>
-              <a href="#">Google Scholar</a>
-            </div>
-          </article>
-        </div>
-      </div>
+              <p class="person-role">
+                Assistant Professor<br>
+                Department of EECE, IIT Dharwad
+              </p>
 
-      <!-- MTECH -->
-      <div class="people-category">
-        <h3 class="category-title">M.Tech Scholars</h3>
-
-        <div class="people-grid">
-          <article class="person-card">
-            <div class="person-photo">Student photograph</div>
-            <h3>Student Name</h3>
-            <div class="person-role">M.Tech</div>
-            <p>Research/project area: Add the student's topic.</p>
-            <span class="status">Ongoing</span>
-            <div class="person-links">
-              <a href="#">Profile</a>
-            </div>
-          </article>
-
-          <article class="person-card">
-            <div class="person-photo">Student photograph</div>
-            <h3>Student Name</h3>
-            <div class="person-role">M.Tech</div>
-            <p>Research/project area: Add the student's topic.</p>
-            <span class="status completed">Completed</span>
-            <div class="person-links">
-              <a href="#">Profile</a>
-            </div>
-          </article>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="container">
-      <div class="section-label">Projects</div>
-      <h2 class="section-title">Projects and student work</h2>
-
-      <p class="section-description">
-        Add verified project details, researchers, supervisors,
-        project status, and relevant links here.
-      </p>
-
-      <div class="project-grid">
-        <article class="project-card">
-          <div class="meta">Project</div>
-          <h3>AI-Based Crop Disease Detection System</h3>
-          <p>Project details and student attribution to be confirmed.</p>
-        </article>
-
-        <article class="project-card">
-          <div class="meta">Project</div>
-          <h3>Design and Analysis of CMOS Low Noise Amplifier</h3>
-          <p>Project details and student attribution to be confirmed.</p>
-        </article>
-
-        <article class="project-card">
-          <div class="meta">Project</div>
-          <h3>Smart Street Lighting System</h3>
-          <p>Project details and student attribution to be confirmed.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- PUBLICATIONS -->
-  <section id="publications">
-    <div class="container">
-      <div class="section-label">Research Output</div>
-      <h2 class="section-title">Selected publications</h2>
-
-      <p class="section-description">
-        Add verified publication records with authors, venue, year,
-        DOI, and links to the publisher or paper.
-      </p>
-
-      <div class="publication-grid">
-        <article class="publication-card">
-          <div class="meta">Publication record</div>
-          <h3>Publication title</h3>
-          <p>Authors · Conference or journal · Year</p>
-          <div class="person-links">
-            <a href="#">Read paper</a>
-            <a href="#">DOI</a>
+              <a href="mailto:sambaee@iitdh.ac.in">
+                sambaee@iitdh.ac.in
+              </a>
+            </article>
           </div>
-        </article>
+        </div>
+
+        <!-- STUDENTS -->
+
+        <div class="people-category">
+          <h3 class="people-heading">Students</h3>
+
+          <!-- PhD -->
+
+          <h4 class="people-heading">Ph.D. Scholars</h4>
+
+          <div class="people-grid">
+            <!-- Duplicate this card for each Ph.D. scholar -->
+            <article class="person-card">
+              <h4>Student Name</h4>
+              <p class="person-role">Ph.D. Scholar</p>
+              <span class="status ongoing">Ongoing</span>
+            </article>
+
+            <!-- Example of a completed Ph.D. -->
+            <article class="person-card">
+              <h4>Student Name</h4>
+              <p class="person-role">Ph.D. Scholar</p>
+              <span class="status completed">Completed</span>
+            </article>
+          </div>
+
+          <!-- MTECH BY RESEARCH -->
+
+          <h4 class="people-heading" style="margin-top: 30px;">
+            M.Tech by Research Scholars
+          </h4>
+
+          <div class="people-grid">
+            <article class="person-card">
+              <h4>Student Name</h4>
+              <p class="person-role">M.Tech by Research</p>
+              <span class="status ongoing">Ongoing</span>
+            </article>
+
+            <article class="person-card">
+              <h4>Student Name</h4>
+              <p class="person-role">M.Tech by Research</p>
+              <span class="status completed">Completed</span>
+            </article>
+          </div>
+
+          <!-- MTECH -->
+
+          <h4 class="people-heading" style="margin-top: 30px;">
+            M.Tech Scholars
+          </h4>
+
+          <div class="people-grid">
+            <article class="person-card">
+              <h4>Student Name</h4>
+              <p class="person-role">M.Tech</p>
+              <span class="status ongoing">Ongoing</span>
+            </article>
+
+            <article class="person-card">
+              <h4>Student Name</h4>
+              <p class="person-role">M.Tech</p>
+              <span class="status completed">Completed</span>
+            </article>
+          </div>
+        </div>
+
+        <!-- INTERNS -->
+
+        <div class="people-category">
+          <h3 class="people-heading">Interns</h3>
+
+          <div class="people-grid">
+            <article class="person-card">
+              <h4>Intern Name</h4>
+              <p class="person-role">Research Intern</p>
+              <span class="status ongoing">Ongoing</span>
+            </article>
+
+            <article class="person-card">
+              <h4>Intern Name</h4>
+              <p class="person-role">Research Intern</p>
+              <span class="status completed">Completed</span>
+            </article>
+          </div>
+        </div>
+
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-label">Contact</div>
-      <h2 class="section-title">Get in touch.</h2>
+    <!-- =========================================================
+         PROJECTS
+    ========================================================== -->
 
-      <p class="contact-text">
-        For research collaboration, speaking requests, student opportunities,
-        and inquiries regarding SPAA Lab, please contact
-        <strong>Prof. Samba Raju Chiluveru</strong>.
-      </p>
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-label">Projects</div>
+        <h2 class="section-title">Research Projects</h2>
 
-      <address class="contact-info">
-        <div class="contact-item">
-          <a href="mailto:sambaee@iitdh.ac.in">sambaee@iitdh.ac.in</a>
+        <p class="section-intro">
+          Add verified lab projects, their descriptions, collaborators,
+          and project links here.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <span class="project-tag">AI / ML</span>
+            <h3>AI-Based Crop Disease Detection System</h3>
+            <p>
+              Project details and team information can be added here
+              after verification.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="project-tag">VLSI</span>
+            <h3>Design and Analysis of CMOS Low Noise Amplifier</h3>
+            <p>
+              Add the project description, tools, and verified contributors.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="project-tag">Embedded Systems</span>
+            <h3>Smart Street Lighting System</h3>
+            <p>
+              Add the project summary and verified project information.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PUBLICATIONS
+    ========================================================== -->
+
+    <section class="section section-alt" id="publications">
+      <div class="container">
+        <div class="section-label">Publications</div>
+        <h2 class="section-title">Selected Publications</h2>
+
+        <p class="section-intro">
+          Add verified journal and conference publications with their
+          authors, venue, year, and DOI or publisher links.
+        </p>
+
+        <div class="publication-list">
+          <article class="publication">
+            <h3>Publication title</h3>
+            <p>
+              Add the exact publication title, author list, venue,
+              publication year, and verified link.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         OPPORTUNITIES
+    ========================================================== -->
+
+    <section class="section" id="opportunities">
+      <div class="container">
+        <div class="section-label">Opportunities</div>
+        <h2 class="section-title">Work With Us</h2>
+
+        <div class="opportunity-box">
+          <h3>Interested in research at SPAA Lab?</h3>
+
+          <p>
+            For inquiries about research collaboration, student projects,
+            internships, or research opportunities, contact the faculty
+            member directly. Please confirm current openings before applying.
+          </p>
+
+          <a class="button" href="mailto:sambaee@iitdh.ac.in">
+            Contact the Lab
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CONTACT
+    ========================================================== -->
+
+    <section class="section section-alt" id="contact">
+      <div class="container contact-layout">
+
+        <div>
+          <div class="section-label">Contact</div>
+
+          <h2 id="contact-title" class="section-title">
+            Get in touch.
+          </h2>
+
+          <p class="contact-text">
+            For research collaboration, speaking requests, student opportunities,
+            and inquiries regarding SPAA Lab, please contact
+            <strong>Prof. Samba Raju Chiluveru</strong>.
+          </p>
+
+          <address class="contact-info">
+            <div class="contact-item">
+              <a href="mailto:sambaee@iitdh.ac.in">
+                sambaee@iitdh.ac.in
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <a href="tel:+918362309733">
+                +91 836 230 9733
+              </a>
+            </div>
+
+            <div class="contact-item">
+              A1–340, Academic Block-I
+            </div>
+
+            <div class="contact-item">
+              IIT Dharwad, Karnataka, India
+            </div>
+          </address>
         </div>
 
-        <div class="contact-item">
-          <a href="tel:+918362309733">+91 836 230 9733</a>
+        <div class="contact-note">
+          <h3>SPAA Lab</h3>
+          <p>
+            Signal Processing and AI Accelerators Lab
+          </p>
+          <p>
+            Indian Institute of Technology Dharwad
+          </p>
+          <p>
+            Research areas: VLSI, AI Accelerators, Edge Computing,
+            AI Optimization, and Digital Signal Processing.
+          </p>
         </div>
 
-        <div class="contact-item">A1–340, Academic Block-I</div>
-        <div class="contact-item">IIT Dharwad, Karnataka, India</div>
-      </address>
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <!-- FOOTER -->
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+
   <footer>
     <div class="container footer-inner">
-      <div>© 2026 SPAA Lab · IIT Dharwad</div>
 
       <div>
-        <a href="mailto:sambaee@iitdh.ac.in">sambaee@iitdh.ac.in</a>
-        ·
-        <a href="tel:+918362309733">+91 836 230 9733</a>
+        © 2026 SPAA Lab · IIT Dharwad
       </div>
 
-      <div>VLSI · AI Accelerators · Edge Computing · AI Optimization</div>
+      <div>
+        <a href="mailto:sambaee@iitdh.ac.in">
+          sambaee@iitdh.ac.in
+        </a>
+        ·
+        <a href="tel:+918362309733">
+          +91 836 230 9733
+        </a>
+      </div>
 
-      <div><a href="#home">Back to top ↑</a></div>
+      <div>
+        VLSI · AI Accelerators · Edge Computing · AI Optimization
+      </div>
+
+      <div>
+        <a href="#home">Back to top ↑</a>
+      </div>
+
     </div>
   </footer>
 
