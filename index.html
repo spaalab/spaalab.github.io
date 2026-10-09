@@ -1500,173 +1500,164 @@
   <!-- =========================================================
        FACULTY
   ========================================================= -->
+<style>
+  .faculty-profile {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 55px;
+    padding: 42px;
+    background: #ffffff;
+    border: 1px solid #e2e9f2;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(24, 58, 100, 0.08);
+  }
 
-  <section id="faculty" class="about">
+  .faculty-photo {
+    min-height: 370px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #eaf4ff, #dcecff);
+    overflow: hidden;
+  }
 
-    <div class="container">
+  .faculty-photo img {
+    width: 100%;
+    height: 100%;
+    min-height: 370px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
 
-      <div class="section-label">
-        Faculty In-Charge
-      </div>
+  .faculty-role {
+    color: #1468c9;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
 
-      <h2 class="section-title">
-        SPAA Lab Leadership
-      </h2>
+  .faculty-info h3 {
+    font-size: 35px;
+    line-height: 1.15;
+    color: #102044;
+    margin-bottom: 8px;
+  }
 
-      <p class="section-description">
-        SPAA Lab is under the guidance of
-        Prof. Samba Raju Chiluveru.
-      </p>
+  .faculty-position {
+    color: #1468c9;
+    font-size: 18px;
+    font-weight: 700;
+  }
 
+  .faculty-department {
+    color: #65748d;
+    font-size: 15px;
+    margin-top: 3px;
+    margin-bottom: 24px;
+  }
 
-      <div class="faculty-profile">
+  .faculty-bio {
+    color: #596982;
+    font-size: 15.5px;
+    line-height: 1.75;
+    margin-bottom: 15px;
+  }
 
+  .faculty-info h4 {
+    color: #102044;
+    font-size: 19px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
 
-        <!-- PHOTO PLACEHOLDER -->
+  .research-interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+  }
 
-        <div class="faculty-photo">
+  .research-interests span {
+    padding: 8px 13px;
+    border-radius: 999px;
+    background: #edf6ff;
+    color: #1468c9;
+    border: 1px solid #d7e9fb;
+    font-size: 12px;
+    font-weight: 650;
+  }
 
-          <div class="faculty-initials">
-            SRC
-          </div>
+  .faculty-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 27px;
+    padding-top: 22px;
+    border-top: 1px solid #e5ebf3;
+  }
 
-        </div>
+  .faculty-contact a,
+  .faculty-contact span {
+    padding: 9px 13px;
+    border-radius: 8px;
+    background: #f6f8fb;
+    color: #34445f;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+  }
 
+  .faculty-contact a:hover {
+    color: #1468c9;
+  }
 
-        <!-- PROFILE -->
+  @media (max-width: 800px) {
+    .faculty-profile {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 24px;
+    }
+  }
+</style>
 
-        <div class="faculty-info">
+<div class="faculty-profile">
 
-          <div class="faculty-role">
-            FACULTY IN-CHARGE · SPAA LAB
-          </div>
+  <div class="faculty-photo">
+    <img src="Professional%20Indian%20Corporate%20Headshot.png" alt="Prof. Samba Raju Chiluveru">
+  </div>
 
-          <h3>
-            Prof. Samba Raju Chiluveru
-          </h3>
+  <div class="faculty-info">
+    <div class="faculty-role">PRINCIPAL INVESTIGATOR</div>
+    <h3>Prof. Samba Raju Chiluveru</h3>
+    <div class="faculty-position">Assistant Professor</div>
+    <div class="faculty-department">Department of Electrical, Electronics and Communication Engineering, IIT Dharwad</div>
 
-          <div class="faculty-position">
-            Assistant Professor
-          </div>
+    <p class="faculty-bio">
+      Yahan sir ka short bio likho.
+    </p>
 
-          <div class="faculty-department">
-
-            Electrical, Electronics and Communication Engineering (EECE)
-
-            <br>
-
-            Indian Institute of Technology Dharwad
-
-          </div>
-
-
-          <p class="faculty-bio">
-
-            Prof. Samba Raju Chiluveru is an Assistant Professor
-            in the Department of Electrical, Electronics and
-            Communication Engineering at the Indian Institute
-            of Technology Dharwad.
-
-          </p>
-
-
-          <p class="faculty-bio">
-
-            Before moving to Dharwad, he worked with
-            Advanced Micro Devices (AMD) as a Senior Software
-            Development Engineer.
-
-          </p>
-
-
-          <p class="faculty-bio">
-
-            He earned his Ph.D. degree in 2021 from the
-            Indian Institute of Technology Roorkee under the
-            guidance of Prof. Manoj Tripathy.
-
-          </p>
-
-
-          <h4>
-            Areas of Research Interest
-          </h4>
-
-
-          <div class="research-interests">
-
-            <span>
-              Edge Computing Accelerators
-            </span>
-
-            <span>
-              ML / AI Applications
-            </span>
-
-            <span>
-              High-Performance Deep Learning
-            </span>
-
-            <span>
-              Inference Model Optimization
-            </span>
-
-            <span>
-              Speech Processing
-            </span>
-
-            <span>
-              Speech Enhancement
-            </span>
-
-            <span>
-              Digital Signal Processing
-            </span>
-
-          </div>
-
-
-          <div class="faculty-contact">
-
-            <a href="mailto:sambaee@iitdh.ac.in">
-              ✉ sambaee@iitdh.ac.in
-            </a>
-
-            <span>
-              ☎ +836 2309733
-            </span>
-
-            <span>
-              Extension: 1087
-            </span>
-
-            <span>
-              Office: A1–340
-            </span>
-
-          </div>
-
-
-          <div class="social-links">
-
-            <a
-              href="https://www.linkedin.com/in/dr-sambaraju-chiluveru-97426529"
-              target="_blank"
-              rel="noopener"
-            >
-              LinkedIn
-            </a>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
+    <h4>Research Interests</h4>
+    <div class="research-interests">
+      <span>VLSI AI Accelerators</span>
+      <span>Edge Computing</span>
+      <span>Deep Learning</span>
+      <span>LLMs</span>
+      <span>Quantization</span>
+      <span>AI Optimization</span>
     </div>
 
-  </section>
+    <div class="faculty-contact">
+      <a href="mailto:sambaee@iitdh.ac.in">sambaee@iitdh.ac.in</a>
+      <a href="tel:+918362309733">+91 836 230 9733</a>
+      <span>A1–340, Academic Block-I</span>
+    </div>
+  </div>
+
+</div>
+
+
+          
 
 
   <!-- =========================================================
